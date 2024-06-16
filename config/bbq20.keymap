@@ -35,10 +35,12 @@
         slcmod: sapce_lclick_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            //flavor = "tap-preferred";
+            //tapping-term-ms = <200>;
+            //quick-tap-ms = <200>;
+            //require-prior-idle-ms = <125>;
+            flavor = "balanced";
             tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            require-prior-idle-ms = <125>;
             bindings = <&mkp>, <&kp>;
         };
     };
