@@ -32,6 +32,16 @@
     };
 
     behaviors {
+        slcmod: sapce_lclick_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            bindings = <&kp>, <&mkp>;
+        };
+    };
+
+    behaviors {
         mousemod: mouse_click_hold {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -85,7 +95,7 @@
     &bhm HASH Q  &bhm N1 W  &bhm N2 E  &bhm N3 R  &bhm LEFT T       &bhm RIGHT Y   &bhm UNDER U     &bhm MINUS I  &bhm PLUS O  &bhm AT P
     &bhm STAR A  &bhm N4 S  &bhm N5 D  &bhm N6 F  &bhm KP_DIVIDE G  &bhm COLON H  &bhm SEMI J       &bhm DQT K    &bhm APOS L  &kp BSPC
     &sk LSHFT    &bhm N7 Z  &bhm N8 X  &bhm N9 C  &bhm QMARK V      &bhm EXCL B   &bhm COMMA N      &bhm DOT M    &kp RSHFT    &kp ENTER
-    &sk LCTRL               &kp N0                         &bhm LCLK SPACE                          &tog SYM                          &tog UPPER
+    &sk LCTRL               &kp N0                         &slcmod LCLK SPACE                          &tog SYM                          &tog UPPER
             >;
         };
 
@@ -98,7 +108,7 @@
     &kp HASH     &kp N1     &kp N2      &kp N3    &bhm LEFT LPAR    &bhm RIGHT RPAR    &kp UNDER        &kp MINUS        &kp PLUS         &kp AT
     &kp STAR     &kp N4     &kp N5      &kp N6    &kp KP_DIVIDE     &kp COLON          &kp SEMI         &kp DQT          &kp APOS         &kp BSPC
     &sk LSHFT    &kp N7     &kp N8      &kp N9    &kp QMARK         &kp EXCL           &kp COMMA        &kp DOT          &mt C_MUTE DLLR  &kp ENTER
-    &sk LCTRL               &kp N0                           &bhm LCLK SPACE                          &tog SYM                          &tog UPPER
+    &sk LCTRL               &kp N0                           &slcmod LCLK SPACE                          &tog SYM                          &tog UPPER
             >;
         };
 
@@ -110,7 +120,7 @@
     &none        &kp UP     &none       &none      &kp LBKT          &kp RBKT      &kp LT           &kp GT          &kp PIPE         &kp EQUAL
     &kp LEFT     &kp DOWN   &kp RIGHT   &none      &kp BSLH          &kp AMPS      &kp LBRC         &kp RBRC        &kp CARET        &kp BSPC
     &sk LSHFT    &kp PSCRN  &none       &none      &kp PRCNT         &kp TILDE     &none            &none           &bt BT_CLR       &kp ENTER
-    &sk LCTRL               &kp N0                              &bhm LCLK SPACE              &tog SYM                         &tog UPPER
+    &sk LCTRL               &kp N0                              &slcmod LCLK SPACE              &tog SYM                         &tog UPPER
             >;
         };
     };
