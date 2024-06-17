@@ -97,6 +97,15 @@
         };
     };
 
+    behaviors {
+        td1: tap_dance_1 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&kp ESC>, <&zed_em_back>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -112,7 +121,7 @@
 //        |         aA     |         0           |           SPACE              |         SYM         |        aA          |       
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 
-                 &mkp LCLK                                                                                             &zed_em_back
+                 &mkp LCLK                                                                                             &td1
          &stc0 SCRL_UP TAB        &td0           &mkp LCLK                   &mousemod CLCK RCLK                    &sk LALT
     &bhm HASH Q  &bhm N1 W  &bhm N2 E  &bhm N3 R  &bhm LEFT T       &bhm RIGHT Y   &bhm UNDER U      &bhm MINUS I  &bhm PLUS O  &bhm AT P
     &bhm STAR A  &bhm N4 S  &bhm N5 D  &bhm N6 F  &bhm KP_DIVIDE G  &bhm COLON H   &bhm SEMI J       &bhm DQT K    &bhm APOS L  &kp BSPC
