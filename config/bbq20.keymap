@@ -64,6 +64,18 @@
             #binding-cells = <0>;
             bindings = <&macro_press &kp LALT>,<&macro_tap &kp LEFT>,<&macro_release &kp LALT>;
         };
+
+        btswitch1: zed_em_btswitch1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 0>,<&tog UPP>;
+        };
+
+        btswitch2: zed_em_btswitch2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 1>,<&tog UPP>;
+        };
     };
 
     behaviors {
@@ -125,7 +137,7 @@
         upper_layer {
 
             bindings = <
-        &bt BT_SEL 0                                                                                                     &bt BT_SEL 1
+        &btswitch1                                                                                                     &btswitch2
         &stc0 SCRL_UP TAB                &td0             &mkp LCLK              &mousemod CLCK RCLK                   &bootloader
     &none        &kp UP     &none       &none      &kp LBKT          &kp RBKT      &kp LT           &kp GT          &kp PIPE         &kp EQUAL
     &kp LEFT     &kp DOWN   &kp RIGHT   &none      &kp BSLH          &kp AMPS      &kp LBRC         &kp RBRC        &kp CARET        &kp BSPC
