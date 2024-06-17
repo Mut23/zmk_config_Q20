@@ -68,13 +68,13 @@
         zen_em_bt0: zen_em_bt0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>,<&macro_tap &bt BT_SEL 0>,<&macro_release &kp LALT>;
+            bindings = <&macro_press &kp LALT>,<&macro_tap &bt BT_SEL 0>,<&macro_tap &tog UPPER>,<&macro_release &kp LALT>;
         };
 
         zen_em_bt1: zen_em_bt1{
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>,<&macro_tap &bt BT_SEL 1>,<&macro_release &kp LALT>;
+            bindings = <&macro_press &kp LALT>,<&macro_tap &bt BT_SEL 1>,<&macro_tap &tog UPPER>,<&macro_release &kp LALT>;
         };
     };
 
