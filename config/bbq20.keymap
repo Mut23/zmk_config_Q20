@@ -65,13 +65,13 @@
             bindings = <&macro_press &kp LALT>,<&macro_tap &kp LEFT>,<&macro_release &kp LALT>;
         };
 
-        btswitch1: btswitch1 {
+        zen_em_bt0: zen_em_bt0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_press &kp LALT>,<&macro_tap &bt BT_SEL 0 &tog UPP>,<&macro_release &kp LALT>;
         };
 
-        btswitch2: btswitch2 {
+        zen_em_bt1: zen_em_bt1{
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_press &kp LALT>,<&macro_tap &bt BT_SEL 1 &tog UPP>,<&macro_release &kp LALT>;
@@ -137,7 +137,7 @@
         upper_layer {
 
             bindings = <
-        &btswitch1                                                                                                     &btswitch2
+        &zen_em_bt0                                                                                                     &zen_em_bt1
         &stc0 SCRL_UP TAB                &td0             &mkp LCLK              &mousemod CLCK RCLK                   &bootloader
     &none        &kp UP     &none       &none      &kp LBKT          &kp RBKT      &kp LT           &kp GT          &kp PIPE         &kp EQUAL
     &kp LEFT     &kp DOWN   &kp RIGHT   &none      &kp BSLH          &kp AMPS      &kp LBRC         &kp RBRC        &kp CARET        &kp BSPC
