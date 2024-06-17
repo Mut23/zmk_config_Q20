@@ -68,13 +68,13 @@
         btswitch1: zed_em_btswitch1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &bt BT_SEL 0>,<&macro_tap &tog UPP>;
+            bindings = <&macro_tap &bt BT_SEL 0 &tog UPP>;
         };
 
         btswitch2: zed_em_btswitch2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &bt BT_SEL 1>,<&macro_tap &tog UPP>;
+            bindings = <&macro_tap &bt BT_SEL 1 &tog UPP>;
         };
     };
 
