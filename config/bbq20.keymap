@@ -43,14 +43,13 @@
         };
     };
 
-   //单击鼠标左键，长按Capslock
+   //单击ESC，双按Capslock
     behaviors {
-        mousemod: mouse_click_hold {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
+        esccapslock: tap_dance_esccapslock {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&kp>, <&mkp>;
+            bindings = <&kp ESC>, <&kp CLCK>;
         };
     };
 
@@ -126,13 +125,13 @@
         };
     };
 
-   //单击ESC，双击浏览器返回
+   //单击鼠标右键，双击浏览器返回
     behaviors {
         td1: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&kp ESC>, <&zed_em_back>;
+            bindings = <&mkp RCLK>, <&zed_em_back>;
         };
     };
 
@@ -151,8 +150,8 @@
 //        |         aA     |         0           |           SPACE              |         SYM         |        aA          |       
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 
-                 &mkp LCLK                                                                                              &td1
-         &stc0 SCRL_UP TAB        &td0           &mkp LCLK                   &mousemod CLCK RCLK                    &sk LALT
+                 &mkp LCLK                                                                                              &esccapslock
+         &stc0 SCRL_UP TAB        &td0           &mkp LCLK                   &td1                          &sk LALT
     &bhm HASH Q  &bhm N1 W  &bhm N2 E  &bhm N3 R  &bhm LEFT T       &bhm RIGHT Y   &bhm UNDER U      &bhm MINUS I  &bhm PLUS O  &bhm AT P
     &bhm STAR A  &bhm N4 S  &bhm N5 D  &bhm N6 F  &bhm KP_DIVIDE G  &bhm COLON H   &bhm SEMI J       &bhm DQT K    &bhm APOS L  &kp BSPC
     &sk LSHFT    &bhm N7 Z  &bhm N8 X  &bhm N9 C  &bhm QMARK V      &bhm EXCL B    &bhm COMMA N      &bhm DOT M    &kp RSHFT    &kp ENTER
@@ -165,7 +164,7 @@
 
             bindings = <        
         &kp C_VOL_UP                                                                                                    &kp C_VOL_DN
-        &stc0 SCRL_UP TAB                 &td0           &mkp LCLK             &mousemod CLCK RCLK                    &sk LALT 
+        &stc0 SCRL_UP TAB                 &td0           &mkp LCLK             &td1                                    &sk LALT 
     &kp HASH     &kp N1     &kp N2      &kp N3    &bhm LEFT LPAR    &bhm RIGHT RPAR    &kp UNDER        &kp MINUS        &kp PLUS         &kp AT
     &kp STAR     &kp N4     &kp N5      &kp N6    &kp KP_DIVIDE     &kp COLON          &kp SEMI         &kp DQT          &kp APOS         &kp BSPC
     &sk LSHFT    &kp N7     &kp N8      &kp N9    &kp QMARK         &kp EXCL           &kp COMMA        &kp DOT          &mt C_MUTE DLLR  &kp ENTER
@@ -176,8 +175,8 @@
         upper_layer {
 
             bindings = <
-        &zen_em_bt0                                                                                                     &zen_em_bt1
-        &stc0 SCRL_UP TAB                &td0             &mkp LCLK              &mousemod CLCK RCLK                   &bootloader
+        &zen_em_bt0                                                                                                 &zen_em_bt1
+        &stc0 SCRL_UP TAB                &td0             &mkp LCLK              &td1                              &bootloader
     &zen_em_closewindow        &kp UP     &zen_em_todesktop       &zen_em_shiftsrf      &kp LBKT          &kp RBKT      &kp LT           &kp GT          &kp PIPE         &kp EQUAL
     &kp LEFT                   &kp DOWN   &kp RIGHT               &none                 &kp BSLH          &kp AMPS      &kp LBRC         &kp RBRC        &kp CARET        &kp BSPC
     &sk LSHFT                  &kp PSCRN  &none                   &none                 &kp PRCNT         &kp TILDE     &none            &none           &bt BT_CLR       &kp ENTER
