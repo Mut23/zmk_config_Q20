@@ -118,7 +118,7 @@
             #binding-cells = <0>;
             flavor = "balanced";
             tapping-term-ms = <280>;
-            bindings = <&mkp>,<&zen_em_esc>,;
+            bindings = <&mkp>,<&zen_em_esc>;
         };
     };
 
