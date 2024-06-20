@@ -82,6 +82,12 @@
             #binding-cells = <0>;
             bindings = <&macro_press &kp LALT>,<&macro_tap &kp F4>,<&macro_release &kp LALT>;
         };
+
+        zen_em_closewindow: zen_em_closewindow{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =<&macro_press &kp LALT>, <&macro_tap &kp F4>,<&macro_tap &tog UPPER>,<&macro_release &kp LALT>;
+        };
     };
 
     behaviors {
@@ -121,6 +127,7 @@
         };
     };
 
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -136,7 +143,7 @@
 //        |         aA     |         0           |           SPACE              |         SYM         |        aA          |       
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 
-                 &escmod                                                                                &td1
+                 &mkp LCLK                                                                                              &td1
          &stc0 SCRL_UP TAB        &td0           &mkp LCLK                   &mousemod CLCK RCLK                    &sk LALT
     &bhm HASH Q  &bhm N1 W  &bhm N2 E  &bhm N3 R  &bhm LEFT T       &bhm RIGHT Y   &bhm UNDER U      &bhm MINUS I  &bhm PLUS O  &bhm AT P
     &bhm STAR A  &bhm N4 S  &bhm N5 D  &bhm N6 F  &bhm KP_DIVIDE G  &bhm COLON H   &bhm SEMI J       &bhm DQT K    &bhm APOS L  &kp BSPC
@@ -163,9 +170,9 @@
             bindings = <
         &zen_em_bt0                                                                                                     &zen_em_bt1
         &stc0 SCRL_UP TAB                &td0             &mkp LCLK              &mousemod CLCK RCLK                   &bootloader
-    &none        &kp UP     &none       &none      &kp LBKT          &kp RBKT      &kp LT           &kp GT          &kp PIPE         &kp EQUAL
-    &kp LEFT     &kp DOWN   &kp RIGHT   &none      &kp BSLH          &kp AMPS      &kp LBRC         &kp RBRC        &kp CARET        &kp BSPC
-    &sk LSHFT    &kp PSCRN  &none       &none      &kp PRCNT         &kp TILDE     &none            &none           &bt BT_CLR       &kp ENTER
+    &zen_em_closewindow        &kp UP     &none       &none      &kp LBKT          &kp RBKT      &kp LT           &kp GT          &kp PIPE         &kp EQUAL
+    &kp LEFT                   &kp DOWN   &kp RIGHT   &none      &kp BSLH          &kp AMPS      &kp LBRC         &kp RBRC        &kp CARET        &kp BSPC
+    &sk LSHFT                  &kp PSCRN  &none       &none      &kp PRCNT         &kp TILDE     &none            &none           &bt BT_CLR       &kp ENTER
                  &sk LCTRL       &kp N0                &slcmod LCLK SPACE              &tog SYM              &tog UPPER
             >;
         };
