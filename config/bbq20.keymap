@@ -115,10 +115,10 @@
     behaviors {
         escmod: tap_esc_mods {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             flavor = "balanced";
             tapping-term-ms = <280>;
-            bindings = <&zen_em_esc>, <&mkp>;
+            bindings = <&mkp>,<&zen_em_esc>,;
         };
     };
 
