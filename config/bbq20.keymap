@@ -21,7 +21,7 @@
    };
 
 / {
-
+   //单击层1字符，长按层2字符
     behaviors {
         bhm: balanced_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -32,6 +32,7 @@
         };
     };
 
+   //单击空格键，长按鼠标左键
     behaviors {
         slcmod: sapce_lclick_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -42,6 +43,7 @@
         };
     };
 
+   //单击鼠标左键，长按Capslock
     behaviors {
         mousemod: mouse_click_hold {
             compatible = "zmk,behavior-hold-tap";
@@ -53,48 +55,49 @@
     };
 
     macros {
+        //切换程序
         shiftapp: zed_em_shiftapp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_press &kp LALT>,<&macro_tap &kp TAB>,<&macro_release &kp LALT>;
         };
 
+        //浏览器返回快捷键
         zed_em_back: zed_em_back {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_press &kp LALT>,<&macro_tap &kp LEFT>,<&macro_release &kp LALT>;
         };
 
+        //切换蓝牙设备0
         zen_em_bt0: zen_em_bt0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap &bt BT_SEL 0>,<&macro_tap &tog UPPER>;
         };
 
+        //切换蓝牙设备1
         zen_em_bt1: zen_em_bt1{
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap &bt BT_SEL 1>,<&macro_tap &tog UPPER>;
         };
 
-        zen_em_esc: zen_em_esc{
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>,<&macro_tap &kp F4>,<&macro_release &kp LALT>;
-        };
-
+        //关闭窗口
         zen_em_closewindow: zen_em_closewindow{
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =<&macro_press &kp LALT>, <&macro_tap &kp F4>,<&macro_tap &tog UPPER>,<&macro_release &kp LALT>;
         };
 
+        //返回桌面
         zen_em_todesktop: zen_em_todesktop{
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =<&macro_press &kp LGUI>, <&macro_tap &kp M>,<&macro_tap &tog UPPER>,<&macro_release &kp LGUI>;
         };
 
+        //切换输入法
         zen_em_shiftsrf: zen_em_shiftsrf{
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -102,16 +105,18 @@
         };
     };
 
+   //长按向上滚动，单击TAP
     behaviors {
         stc0: tap_scrollup_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <280>;
+            tapping-term-ms = <250>;
             bindings = <&msc>, <&kp>;
         };
     };
 
+   //长按向下滚动，双击切换程序
     behaviors {
         td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
@@ -121,6 +126,7 @@
         };
     };
 
+   //单击ESC，双击浏览器返回
     behaviors {
         td1: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
@@ -129,16 +135,6 @@
             bindings = <&kp ESC>, <&zed_em_back>;
         };
     };
-
-    behaviors {
-        escmod: tap_esc_mods {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <400>;
-            bindings = <&mkp LCLK>,<&zen_em_esc>;
-        };
-    };
-
 
     keymap {
         compatible = "zmk,keymap";
