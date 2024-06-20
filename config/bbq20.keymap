@@ -72,35 +72,35 @@
         zen_em_bt0: zen_em_bt0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &bt BT_SEL 0>,<&macro_tap &to default_layer>;
+            bindings = <&macro_tap &bt BT_SEL 0>,<&macro_tap &to UPPER>;
         };
 
         //切换蓝牙设备1
         zen_em_bt1: zen_em_bt1{
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &bt BT_SEL 1>,<&macro_tap &to default_layer>;
+            bindings = <&macro_tap &bt BT_SEL 1>,<&macro_tap &to UPPER>;
         };
 
         //关闭窗口
         zen_em_closewindow: zen_em_closewindow{
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =<&macro_press &kp LALT>, <&macro_tap &kp F4>,<&macro_tap &to default_layer>,<&macro_release &kp LALT>;
+            bindings =<&macro_press &kp LALT>, <&macro_tap &kp F4>,<&macro_tap &to UPPER>,<&macro_release &kp LALT>;
         };
 
         //返回桌面
         zen_em_todesktop: zen_em_todesktop{
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =<&macro_press &kp LGUI>, <&macro_tap &kp M>,<&macro_tap &to default_layer>,<&macro_release &kp LGUI>;
+            bindings =<&macro_press &kp LGUI>, <&macro_tap &kp M>,<&macro_tap &to UPPER>,<&macro_release &kp LGUI>;
         };
 
         //切换输入法
         zen_em_shiftsrf: zen_em_shiftsrf{
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =<&macro_press &kp LGUI>, <&macro_tap &kp SPACE>,<&macro_tap &to default_layer>,<&macro_release &kp LGUI>;
+            bindings =<&macro_press &kp LGUI>, <&macro_tap &kp SPACE>,<&macro_tap &to UPPER>,<&macro_release &kp LGUI>;
         };
     };
 
