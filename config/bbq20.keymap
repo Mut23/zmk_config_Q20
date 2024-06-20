@@ -88,6 +88,18 @@
             #binding-cells = <0>;
             bindings =<&macro_press &kp LALT>, <&macro_tap &kp F4>,<&macro_tap &tog UPPER>,<&macro_release &kp LALT>;
         };
+
+        zen_em_todesktop: zen_em_todesktop{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =<&macro_press &kp LGUI>, <&macro_tap &kp M>,<&macro_tap &tog UPPER>,<&macro_release &kp LGUI>;
+        };
+
+        zen_em_shiftsrf: zen_em_shiftsrf{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =<&macro_press &kp LGUI>, <&macro_tap &kp SPACE>,<&macro_tap &tog UPPER>,<&macro_release &kp LGUI>;
+        };
     };
 
     behaviors {
@@ -170,9 +182,9 @@
             bindings = <
         &zen_em_bt0                                                                                                     &zen_em_bt1
         &stc0 SCRL_UP TAB                &td0             &mkp LCLK              &mousemod CLCK RCLK                   &bootloader
-    &zen_em_closewindow        &kp UP     &none       &none      &kp LBKT          &kp RBKT      &kp LT           &kp GT          &kp PIPE         &kp EQUAL
-    &kp LEFT                   &kp DOWN   &kp RIGHT   &none      &kp BSLH          &kp AMPS      &kp LBRC         &kp RBRC        &kp CARET        &kp BSPC
-    &sk LSHFT                  &kp PSCRN  &none       &none      &kp PRCNT         &kp TILDE     &none            &none           &bt BT_CLR       &kp ENTER
+    &zen_em_closewindow        &kp UP     &zen_em_todesktop       &zen_em_shiftsrf      &kp LBKT          &kp RBKT      &kp LT           &kp GT          &kp PIPE         &kp EQUAL
+    &kp LEFT                   &kp DOWN   &kp RIGHT               &none                 &kp BSLH          &kp AMPS      &kp LBRC         &kp RBRC        &kp CARET        &kp BSPC
+    &sk LSHFT                  &kp PSCRN  &none                   &none                 &kp PRCNT         &kp TILDE     &none            &none           &bt BT_CLR       &kp ENTER
                  &sk LCTRL       &kp N0                &slcmod LCLK SPACE              &tog SYM              &tog UPPER
             >;
         };
