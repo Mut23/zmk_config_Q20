@@ -180,7 +180,7 @@
         &stc0 SCRL_UP TAB                &td0             &mkp LCLK              &td1                              &bootloader
     &zen_em_closewindow        &kp UP     &zen_em_todesktop       &zen_em_shiftsrf      &kp LBKT          &kp RBKT      &kp LT           &kp GT          &kp PIPE         &kp EQUAL
     &kp LEFT                   &kp DOWN   &kp RIGHT               &none                 &kp BSLH          &kp AMPS      &kp LBRC         &kp RBRC        &kp CARET        &kp DEL
-    &sk LSHFT                  &kp PSCRN  &none                   &none                 &kp PRCNT         &kp TILDE     &none            &none           &bt BT_CLR       &kp ENTER
+    &sk LSHFT                  &kp PSCRN  &sys_reset              &none                 &kp PRCNT         &kp TILDE     &none            &none           &bt BT_CLR       &kp ENTER
                  &sk LCTRL       &kp N0                &slcmod LCLK SPACE              &to SYM              &to DEFAULT
             >;
         };
