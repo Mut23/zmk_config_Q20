@@ -202,7 +202,7 @@
         &zen_em_bt0                                                                                                 &zen_em_bt1
         &stc0 SCRL_UP TAB                &td0             &mkp LCLK              &mkp RCLK                              &bootloader
     &zen_em_closewindow    &kp UP            &zen_em_todesktop   &zen_em_shiftsrf     &kp LBKT     &kp RBKT      &kp LT      &kp GT     &kp PIPE       &kp EQUAL
-    &kp LEFT               &kp DOWN          &kp RIGHT           &none                &kp BSLH     &kp AMPS      &kp LBRC    &kp RBRC   &kp CARET      &kp DEL
+    &kp LEFT               &kp DOWN          &kp RIGHT           &none                &kp BSLH     &kp AMPS      &kp LBRC    &kp RBRC   &kp CARET      &mt DEL BSPC
     &sk LSHFT              &zed_em_back      &zed_em_newtab      &zed_em_closetab     &kp PRCNT    &kp TILDE     &none       &none      &td2           &kp ENTER
             &td3              &msc SCRL_UP                  &msc SCRL_DOWN              &to SYM              &to DEFAULT
             >;
