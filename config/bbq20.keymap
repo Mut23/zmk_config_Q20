@@ -104,22 +104,22 @@
         zen_em_closewindow: zen_em_closewindow{
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =<&macro_press &kp LALT>, <&macro_tap &kp F4>,<&macro_tap &to DEFAULT>,<&macro_release &kp LALT>;
+            bindings =<&macro_press &kp LALT>, <&macro_tap &kp F4>,<&macro_release &kp LALT>;
         };
 
         //返回桌面
         zen_em_todesktop: zen_em_todesktop{
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =<&macro_press &kp LGUI>, <&macro_tap &kp M>,<&macro_tap &to DEFAULT>,<&macro_release &kp LGUI>;
+            bindings =<&macro_press &kp LGUI>, <&macro_tap &kp M>,<&macro_release &kp LGUI>;
         };
 
         //切换输入法
         zen_em_shiftsrf: zen_em_shiftsrf{
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =<&macro_press &kp LGUI>, <&macro_tap &kp SPACE>,<&macro_tap &to DEFAULT>,<&macro_release &kp LGUI>;
-        };
+            bindings =<&macro_press &kp LGUI>, <&macro_tap &kp SPACE>,<&macro_release &kp LGUI>;
+        };    
     };
 
    //长按向上滚动，单击TAP
