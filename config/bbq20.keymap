@@ -33,13 +33,13 @@
         };
     };
 
-   //单击ESC，双按Capslock
+   //切换蓝牙设备
     behaviors {
-        esccapslock: tap_dance_esccapslock {
+        btswitch: tap_dance_btswitch {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&kp ESC>, <&kp CLCK>;
+            bindings = <&zen_em_bt0>, <&zen_em_bt1>;
         };
     };
 
@@ -188,7 +188,7 @@
 //        |         aA     |         0           |           SPACE              |         SYM         |        aA          |       
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 
-                 &mkp LCLK                                                                                              &esccapslock
+                 &mkp LCLK                                                                                              &kp CLCK
          &stc0 SCRL_UP TAB        &td0           &mkp LCLK                   &mkp RCLK                          &sk LALT
     &bhm HASH Q  &bhm N1 W  &bhm N2 E  &bhm N3 R  &bhm LEFT T       &bhm RIGHT Y   &bhm UNDER U      &bhm MINUS I  &bhm PLUS O  &bhm AT P
     &bhm STAR A  &bhm N4 S  &bhm N5 D  &bhm N6 F  &bhm KP_DIVIDE G  &bhm COLON H   &bhm SEMI J       &bhm DQT K    &bhm APOS L  &kp BSPC
@@ -213,11 +213,11 @@
         upper_layer {
 
             bindings = <
-        &zen_em_bt0                                                                                                 &zen_em_bt1
+        &mkp LCLK                                                                                                 &btswitch
         &stc0 SCRL_UP TAB                &td0             &mkp LCLK              &mkp RCLK                              &bootloader
     &zen_em_closewindow    &kp UP            &none               &zed_em_refresh      &zed_em_newtab     &none               &none       &none                 &none                      &td2
     &kp LEFT               &kp DOWN          &kp RIGHT           &zed_em_forwer       &none              &none               &none       &none                 &none                      &mt DEL BSPC
-    &sk LSHFT              &none             &none               &zed_em_closetab     &none              &zed_em_back        &none       &zen_em_todesktop     &zen_em_shiftsrf           &kp ENTER
+    &kp ESC                &none             &none               &zed_em_closetab     &none              &zed_em_back        &none       &zen_em_todesktop     &zen_em_shiftsrf           &kp ENTER
             &td3              &msc SCRL_UP                  &msc SCRL_DOWN              &to SYM              &to DEFAULT
             >;
         };
