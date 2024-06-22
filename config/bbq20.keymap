@@ -69,6 +69,20 @@
             bindings = <&macro_press &kp LALT>,<&macro_tap &kp LEFT>,<&macro_release &kp LALT>;
         };
 
+        //浏览器新标签页
+        zed_em_newtab: zed_em_newtab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LCTRL>,<&macro_tap &kp T>,<&macro_release &kp LCTRL>;
+        };
+
+        //浏览器关闭标签页
+        zed_em_closetab: zed_em_closetab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LCTRL>,<&macro_tap &kp W>,<&macro_release &kp LCTRL>;
+        };
+
         //切换蓝牙设备0
         zen_em_bt0: zen_em_bt0 {
             compatible = "zmk,behavior-macro";
@@ -188,9 +202,9 @@
             bindings = <
         &zen_em_bt0                                                                                                 &zen_em_bt1
         &stc0 SCRL_UP TAB                &td0             &mkp LCLK              &td1                              &bootloader
-    &zen_em_closewindow    &kp UP     &zen_em_todesktop   &zen_em_shiftsrf     &kp LBKT     &kp RBKT      &kp LT      &kp GT     &kp PIPE       &kp EQUAL
-    &kp LEFT               &kp DOWN   &kp RIGHT           &none                &kp BSLH     &kp AMPS      &kp LBRC    &kp RBRC   &kp CARET      &kp DEL
-    &sk LSHFT              &none      &none               &none                &kp PRCNT    &kp TILDE     &none       &none      &td2           &kp ENTER
+    &zen_em_closewindow    &kp UP            &zen_em_todesktop   &zen_em_shiftsrf     &kp LBKT     &kp RBKT      &kp LT      &kp GT     &kp PIPE       &kp EQUAL
+    &kp LEFT               &kp DOWN          &kp RIGHT           &none                &kp BSLH     &kp AMPS      &kp LBRC    &kp RBRC   &kp CARET      &kp DEL
+    &sk LSHFT              &zed_em_back      &zed_em_newtab      &zed_em_closetab     &kp PRCNT    &kp TILDE     &none       &none      &td2           &kp ENTER
             &mkp LCLK         &msc SCRL_UP                  &msc SCRL_DOWN              &to SYM              &to DEFAULT
             >;
         };
