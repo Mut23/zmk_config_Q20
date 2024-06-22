@@ -72,6 +72,20 @@
             bindings = <&macro_press &kp LCTRL>,<&macro_tap &kp W>,<&macro_release &kp LCTRL>;
         };
 
+        //浏览器刷新
+        zed_em_refresh: zed_em_refresh {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LCTRL>,<&macro_tap &kp R>,<&macro_release &kp LCTRL>;
+        };
+
+        //浏览器向前
+        zed_em_forwer: zed_em_forwer {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>,<&macro_tap &kp RIGHT>,<&macro_release &kp LALT>;
+        };
+
         //切换蓝牙设备0
         zen_em_bt0: zen_em_bt0 {
             compatible = "zmk,behavior-macro";
@@ -189,9 +203,9 @@
             bindings = <        
         &kp C_VOL_UP                                                                                                    &kp C_VOL_DN
         &stc0 SCRL_UP TAB                 &td0           &mkp LCLK             &mkp RCLK                                    &sk LALT 
-    &kp HASH     &kp N1     &kp N2      &kp N3    &bhm LEFT LPAR    &bhm RIGHT RPAR    &kp UNDER        &kp MINUS        &kp PLUS         &kp AT
-    &kp STAR     &kp N4     &kp N5      &kp N6    &kp KP_DIVIDE     &kp COLON          &kp SEMI         &kp DQT          &kp APOS         &kp BSPC
-    &sk LSHFT    &kp N7     &kp N8      &kp N9    &kp QMARK         &kp EXCL           &kp COMMA        &kp DOT          &mt C_MUTE DLLR  &kp ENTER
+    &kp HASH     &kp N1     &kp N2      &kp N3    &bhm LEFT LPAR         &bhm RIGHT RPAR    &kp UNDER        &kp MINUS        &kp PLUS         &mt PRCNT AT
+    &kp STAR     &kp N4     &kp N5      &kp N6    &mt BSLH KP_DIVIDE     &kp COLON          &kp SEMI         &kp DQT          &kp APOS         &kp BSPC
+    &sk LSHFT    &kp N7     &kp N8      &kp N9    &kp QMARK              &kp EXCL           &kp COMMA        &kp DOT          &mt C_MUTE DLLR  &kp ENTER
             &td3                &kp N0                    &kp SPACE                &to DEFAULT           &to UPPER
             >;
         };
@@ -201,9 +215,9 @@
             bindings = <
         &zen_em_bt0                                                                                                 &zen_em_bt1
         &stc0 SCRL_UP TAB                &td0             &mkp LCLK              &mkp RCLK                              &bootloader
-    &zen_em_closewindow    &kp UP            &zen_em_todesktop   &zen_em_shiftsrf     &kp LBKT     &kp RBKT      &kp LT      &kp GT     &kp PIPE       &kp EQUAL
-    &kp LEFT               &kp DOWN          &kp RIGHT           &none                &kp BSLH     &kp AMPS      &kp LBRC    &kp RBRC   &kp CARET      &mt DEL BSPC
-    &sk LSHFT              &zed_em_back      &zed_em_newtab      &zed_em_closetab     &kp PRCNT    &kp TILDE     &none       &none      &td2           &kp ENTER
+    &zen_em_closewindow    &kp UP            &none               &zen_em_refresh      &zed_em_newtab     &none               &none       &none                 &none                      &td2
+    &kp LEFT               &kp DOWN          &kp RIGHT           &zen_em_forwer       &none              &none               &none       &none                 &none                      &mt DEL BSPC
+    &sk LSHFT              &none             &none               &zed_em_closetab     &none              &zed_em_back        &none       &zen_em_todesktop     &zen_em_shiftsrf           &kp ENTER
             &td3              &msc SCRL_UP                  &msc SCRL_DOWN              &to SYM              &to DEFAULT
             >;
         };
