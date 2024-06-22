@@ -171,16 +171,6 @@
         };
     };
 
-   //单击鼠标右键，双击浏览器返回
-    behaviors {
-        td1: tap_dance_1 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <400>;
-            bindings = <&mkp RCLK>, <&zed_em_back>;
-        };
-    };
-
    //单击截图，双击键盘软重启
     behaviors {
         td2: tap_dance_2 {
