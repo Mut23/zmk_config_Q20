@@ -136,6 +136,16 @@
         };
     };
 
+   //单击截图，双击键盘软重启
+    behaviors {
+        td2: tap_dance_2 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&kp PSCRN>, <&sys_reset>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -178,9 +188,9 @@
             bindings = <
         &zen_em_bt0                                                                                                 &zen_em_bt1
         &stc0 SCRL_UP TAB                &td0             &mkp LCLK              &td1                              &bootloader
-    &zen_em_closewindow    &kp UP     &zen_em_todesktop   &zen_em_shiftsrf     &kp LBKT     &kp RBKT      &kp LT      &kp GT     &kp PIPE               &kp EQUAL
-    &kp LEFT               &kp DOWN   &kp RIGHT           &none                &kp BSLH     &kp AMPS      &kp LBRC    &kp RBRC   &kp CARET              &kp DEL
-    &sk LSHFT              &none      &none               &none                &kp PRCNT    &kp TILDE     &none       &none      &mt sys_reset PSCRN    &kp ENTER
+    &zen_em_closewindow    &kp UP     &zen_em_todesktop   &zen_em_shiftsrf     &kp LBKT     &kp RBKT      &kp LT      &kp GT     &kp PIPE       &kp EQUAL
+    &kp LEFT               &kp DOWN   &kp RIGHT           &none                &kp BSLH     &kp AMPS      &kp LBRC    &kp RBRC   &kp CARET      &kp DEL
+    &sk LSHFT              &none      &none               &none                &kp PRCNT    &kp TILDE     &none       &none      &td2           &kp ENTER
             &mkp LCLK         &msc SCRL_UP                  &msc SCRL_DOWN              &to SYM              &to DEFAULT
             >;
         };
