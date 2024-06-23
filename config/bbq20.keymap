@@ -146,7 +146,14 @@
         zen_em_todesktop: zen_em_todesktop{
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =<&macro_press &kp LGUI>, <&macro_tap &kp M>,<&macro_release &kp LGUI>;
+            bindings =<&macro_press &kp LGUI>, <&macro_tap &kp D>,<&macro_release &kp LGUI>;
+        };
+
+        //安卓返回桌面
+        zen_em_adhome: zen_em_adhome{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =<&macro_press &kp LALT>, <&macro_tap &kp ESC>,<&macro_release &kp LALT>;
         };
 
         //切换输入法
@@ -214,7 +221,7 @@
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 
                  &mkp LCLK                                                                                              &kp CLCK
-         &stc0 SCRL_UP TAB        &td0           &mkp LCLK                   &mkp RCLK                          &sk LALT
+         &stc0 SCRL_UP TAB        &td0           &mkp LCLK                   &mkp RCLK                          &zen_em_adhome
     &bhm HASH Q  &bhm N1 W  &bhm N2 E  &bhm N3 R  &bhm LEFT T       &bhm RIGHT Y   &bhm UNDER U      &bhm MINUS I  &bhm PLUS O  &bhm AT P
     &bhm STAR A  &bhm N4 S  &bhm N5 D  &bhm N6 F  &bhm KP_DIVIDE G  &bhm COLON H   &bhm SEMI J       &bhm DQT K    &bhm APOS L  &kp BSPC
     &sk LSHFT    &bhm N7 Z  &bhm N8 X  &bhm N9 C  &bhm QMARK V      &bhm EXCL B    &bhm COMMA N      &bhm DOT M    &kp RSHFT    &kp ENTER
