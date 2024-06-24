@@ -48,7 +48,7 @@
         shiftapp: zed_em_shiftapp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>,<&macro_tap &kp TAB>,<&macro_release &kp LALT>;
+            bindings = <&macro_press &kp LALT>,<&macro_tap &kp TAB>,<&macro_tap &kp LEFT>,<&macro_release &kp LALT>;
         };
 
         //浏览器返回快捷键
