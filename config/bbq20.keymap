@@ -186,8 +186,8 @@
         tdrshift: tap_dance_rshift {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            bindings = <&kp RSHFT>, <&none>;
+            tapping-term-ms = <400>;
+            bindings =<&none>, <&kp RSHFT>;
         };
     };
 
