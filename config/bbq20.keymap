@@ -207,7 +207,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings =<&none>, <&zen_em_closetab>;
+            bindings =<&none>, <&zed_em_closetab>;
         };
     };
 
