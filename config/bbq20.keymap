@@ -39,7 +39,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&tobt0>, <&bt BT_SEL 1>;
+            bindings = <&tobt0>, <&tobt1>;
         };
     };
 
@@ -49,6 +49,13 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap &bt BT_SEL 0>,<&macro_tap &to DEFAULT>;
+        };
+
+        //切换设备2
+        tobt1: zed_em_tobt0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &bt BT_SEL 1>,<&macro_tap &to UPPER>;
         };
 
         //切换程序
