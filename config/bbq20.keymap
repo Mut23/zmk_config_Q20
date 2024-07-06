@@ -33,6 +33,17 @@
         };
     };
 
+   //单击返回，长按Capslock
+    behaviors {
+        rcm: rclick_capslock_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            bindings = <&kp>, <&mkp>;
+        };
+    };
+
    //切换蓝牙设备
     behaviors {
         btswitch: tap_dance_btswitch {
@@ -294,11 +305,11 @@
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 
                  &mkp LCLK                                                                                              &btswitch
-         &msc SCRL_UP                  &msc SCRL_DOWN           &mkp LCLK                   &mkp RCLK                          &shiftapp
+         &msc SCRL_UP                  &msc SCRL_DOWN           &mkp LCLK                   &rcm CLCK RCLK                          &shiftapp
     &bhm HASH Q  &bhm N1 W  &bhm N2 E  &bhm N3 R  &bhm LEFT T       &bhm RIGHT Y   &bhm UNDER U      &bhm MINUS I  &bhm PLUS O  &bhm AT P
     &bhm STAR A  &bhm N4 S  &bhm N5 D  &bhm N6 F  &bhm KP_DIVIDE G  &bhm COLON H   &bhm SEMI J       &bhm DQT K    &bhm APOS L  &kp BSPC
     &sk LSHFT    &bhm N7 Z  &bhm N8 X  &bhm N9 C  &bhm QMARK V      &bhm EXCL B    &bhm COMMA N      &bhm DOT M    &tdrshift    &kp ENTER
-                 &sk LCTRL        &kp N0                   &bhm CLCK SPACE                &tdtosym             &tdtoupper
+                 &sk LCTRL        &kp N0                   &kp SPACE                     &tdtosym             &tdtoupper
             >;
         };
 
@@ -307,7 +318,7 @@
 
             bindings = <        
         &mkp LCLK                                                                                                    &btswitch
-        &msc SCRL_UP                  &msc SCRL_DOWN           &mkp LCLK             &mkp RCLK                                    &shiftapp 
+        &msc SCRL_UP                  &msc SCRL_DOWN           &mkp LCLK             &rcm CLCK RCLK                                    &shiftapp 
     &kp HASH     &kp N1     &kp N2      &kp N3    &bhm LEFT LPAR         &bhm RIGHT RPAR    &kp UNDER        &kp MINUS        &kp PLUS         &mt PRCNT AT
     &kp STAR     &kp N4     &kp N5      &kp N6    &mt BSLH KP_DIVIDE     &kp COLON          &kp SEMI         &kp DQT          &kp APOS         &kp BSPC
     &sk LSHFT    &kp N7     &kp N8      &kp N9    &kp QMARK              &kp EXCL           &kp COMMA        &kp DOT          &mt C_MUTE DLLR  &kp ENTER
@@ -319,7 +330,7 @@
 
             bindings = <
         &mkp LCLK                                                                                                 &btswitch
-        &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &mkp RCLK                              &shiftapp
+        &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm CLCK RCLK                             &shiftapp
     &tdclosewindow         &tdclosetab        &zed_em_ctrlend     &zed_em_refresh      &zed_em_newtab     &none               &none       &kp C_VOL_DN          &kp C_VOL_UP     &td2
     &zed_em_ctrla          &kp LEFT           &kp RIGHT           &zed_em_forwer       &none              &zed_em_ctrlhome    &none       &none                 &none            &mt DEL BSPC
     &kp ESC                &zed_em_ctrlz      &zed_em_ctrlx       &zed_em_ctrlc        &zed_em_ctrlv      &zed_em_back        &none       &zen_em_todesktop     &td1             &kp ENTER
