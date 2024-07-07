@@ -50,7 +50,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&bt BT_SEL 0>, <&bt BT_SEL 1>;
+            bindings = <&tobt0>, <&tobt1>;
         };
     };
 
@@ -59,7 +59,7 @@
         tobt0: zed_em_tobt0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &bt BT_SEL 0>,<&macro_tap &to DEFAULT>;
+            bindings = <&macro_tap &bt BT_SEL 0>,<&macro_tap &to UPPER>;
         };
 
         //切换设备2
@@ -187,6 +187,13 @@
             #binding-cells = <0>;
             bindings =<&macro_press &kp LGUI>, <&macro_tap &kp SPACE>,<&macro_release &kp LGUI>;
         };    
+
+        //解锁密码
+        pwd: zen_em_pwd{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =<&macro_tap &kp SPACE>,<&macro_tap &kp SPACE>,<&macro_tap &kp SPACE>;
+        }; 
     };
 
    //单击返回桌面，双击切换程序
@@ -235,7 +242,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&none>, <&bootloader>;
+            bindings = <&pwd>, <&bootloader>;
         };
     };
 
