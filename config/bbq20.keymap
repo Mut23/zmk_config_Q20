@@ -50,7 +50,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&tobt0>, <&tobt1>;
+            bindings = <&bt BT_SEL 0>, <&bt BT_SEL 1>;
         };
     };
 
