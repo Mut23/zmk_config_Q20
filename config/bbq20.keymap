@@ -192,7 +192,7 @@
         pwd: zen_em_pwd{
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =<&macro_tap &kp SPACE>,<&macro_tap &kp SPACE>,<&macro_tap &kp SPACE>;
+            bindings =<&macro_tap &kp SPACE &kp SPACE &kp SPACE &kp SPACE>;
         }; 
     };
 
