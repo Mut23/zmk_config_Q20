@@ -215,17 +215,17 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings =<&none>, <&zen_em_closewindow>;
+            bindings =<&kp Q>, <&zen_em_closewindow>;
         };
     };
 
    //双击关闭浏览器标签页
     behaviors {
-        tdclosetab: tap_dance_closetab {
+        tdclosetab: tap_dance_closetab { 
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings =<&none>, <&zed_em_closetab>;
+            bindings =<&kp W>, <&zed_em_closetab>;
         };
     };
 
