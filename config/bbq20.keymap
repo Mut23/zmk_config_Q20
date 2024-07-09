@@ -337,10 +337,10 @@
 
             bindings = <
         &mkp LCLK                                                                                                 &btswitch
-        &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &LA(TAB)
-    &tdclosewindow         &LC(W)             &LC(END)            &LC(R)               &LC(T)             &none               &none       &kp C_VOL_DN          &kp C_VOL_UP     &td2
-    &LC(A)                 &kp LEFT           &kp RIGHT           &LA(RIGHT)           &none              &LC(HOME)           &none       &none                 &none            &mt DEL BSPC
-    &kp ESC                &LC(Z)             &LC(X)              &LC(C)               &LC(V)             &LA(LEFT)           &none       &LG(D)                &td1             &kp ENTER
+        &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &kp LA(TAB)
+    &tdclosewindow         &kp LC(W)             &kp LC(END)            &kp LC(R)               &kp LC(T)             &none               &none       &kp C_VOL_DN          &kp C_VOL_UP     &td2
+    &kp LC(A)              &kp LEFT              &kp RIGHT              &kp LA(RIGHT)           &none                 &kp LC(HOME)        &none       &none                 &none            &mt DEL BSPC
+    &kp ESC                &kp LC(Z)             &kp LC(X)              &kp LC(C)               &kp LC(V)             &kp LA(LEFT)        &none       &kp LG(D)             &td1             &kp ENTER
             &msc SCRL_UP          &msc SCRL_DOWN            &td3                     &tdtosym              &tdtodefault
             >;
         };
