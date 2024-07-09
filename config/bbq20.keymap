@@ -68,6 +68,7 @@
             #binding-cells = <0>;
             bindings = <&macro_tap &bt BT_SEL 1>,<&macro_tap &to UPPER>;
         };
+  };
 
    //单击PC切换输入法，双击RShift
     behaviors {
@@ -105,7 +106,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&kp SPACE>, <&bootloader>;
+            bindings = <&kp SPACE &kp SPACE &kp SPACE &kp SPACE>, <&bootloader>;
         };
     };
 
