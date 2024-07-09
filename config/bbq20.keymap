@@ -33,7 +33,7 @@
         };
     };
 
-   //单击返回，长按Capslock
+   //单击返回，长按Capslock或浏览器返回
     behaviors {
         rcm: rclick_capslock_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -69,150 +69,13 @@
             bindings = <&macro_tap &bt BT_SEL 1>,<&macro_tap &to UPPER>;
         };
 
-        //切换程序
-        shiftapp: zed_em_shiftapp {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>,<&macro_tap &kp TAB>,<&macro_wait_time 250>,<&macro_release &kp LALT>;
-        };
-
-        //浏览器返回快捷键
-        zed_em_back: zed_em_back {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>,<&macro_tap &kp LEFT>,<&macro_release &kp LALT>;
-        };
-
-        //浏览器新标签页
-        zed_em_newtab: zed_em_newtab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>,<&macro_tap &kp T>,<&macro_release &kp LCTRL>;
-        };
-
-        //撤销
-        zed_em_ctrlz: zed_em_ctrlz {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>,<&macro_tap &kp Z>,<&macro_release &kp LCTRL>;
-        }; 
-
-        //剪切
-        zed_em_ctrlx: zed_em_ctrlx {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>,<&macro_tap &kp X>,<&macro_release &kp LCTRL>;
-        };
-
-        //复制
-        zed_em_ctrlc: zed_em_ctrlc {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>,<&macro_tap &kp C>,<&macro_release &kp LCTRL>;
-        };
-
-        //粘贴
-        zed_em_ctrlv: zed_em_ctrlv {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>,<&macro_tap &kp V>,<&macro_release &kp LCTRL>;
-        };
-
-        //全选
-        zed_em_ctrla: zed_em_ctrla {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>,<&macro_tap &kp A>,<&macro_release &kp LCTRL>;
-        };
-
-        //返回顶部
-        zed_em_ctrlhome: zed_em_ctrlhome {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>,<&macro_tap &kp HOME>,<&macro_release &kp LCTRL>;
-        };
-
-        //返回底部
-        zed_em_ctrlend: zed_em_ctrlend {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>,<&macro_tap &kp END>,<&macro_release &kp LCTRL>;
-        };
-
-        //浏览器关闭标签页
-        zed_em_closetab: zed_em_closetab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>,<&macro_tap &kp W>,<&macro_release &kp LCTRL>;
-        };
-
-        //浏览器刷新
-        zed_em_refresh: zed_em_refresh {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL>,<&macro_tap &kp R>,<&macro_release &kp LCTRL>;
-        };
-
-        //浏览器向前
-        zed_em_forwer: zed_em_forwer {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>,<&macro_tap &kp RIGHT>,<&macro_release &kp LALT>;
-        };
-
-        //关闭窗口
-        zen_em_closewindow: zen_em_closewindow{
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =<&macro_press &kp LALT>, <&macro_tap &kp F4>,<&macro_release &kp LALT>;
-        };
-
-        //返回桌面
-        zen_em_todesktop: zen_em_todesktop{
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =<&macro_press &kp LGUI>, <&macro_tap &kp D>,<&macro_release &kp LGUI>;
-        };
-
-        //安卓返回桌面
-        zen_em_adhome: zen_em_adhome{
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =<&macro_press &kp LALT>, <&macro_tap &kp ESC>,<&macro_release &kp LALT>;
-        };
-
-        //切换输入法
-        zen_em_shiftsrf: zen_em_shiftsrf{
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =<&macro_press &kp LGUI>, <&macro_tap &kp SPACE>,<&macro_release &kp LGUI>;
-        };    
-
-        //解锁密码
-        pwd: zen_em_pwd{
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =<&macro_tap &kp SPACE &kp SPACE &kp SPACE &kp SPACE>;
-        }; 
-    };
-
-   //单击返回桌面，双击切换程序
-    behaviors {
-        td0: tap_dance_0 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            bindings = <&shiftapp>, <&zen_em_adhome>;
-        };
-    };
-
    //单击PC切换输入法，双击RShift
     behaviors {
         tdrshift: tap_dance_rshift {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings =<&zen_em_shiftsrf>, <&kp RSHFT>;
+            bindings =<kp LG(SPACE)>, <&kp RSHFT>;
         };
     };
 
@@ -222,7 +85,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings =<&kp Q>, <&zen_em_closewindow>;
+            bindings =<&kp Q>, <&kp LA(F4)>;
         };
     };
 
@@ -232,17 +95,17 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings =<&kp W>, <&zed_em_closetab>;
+            bindings =<&kp W>, <&LC(W)>;
         };
     };
 
-   //双击进入bootloder
+   //单击输入解锁密码，双击进入bootloder
     behaviors {
         td1: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&pwd>, <&bootloader>;
+            bindings = <&kp SPACE &kp SPACE &kp SPACE &kp SPACE>, <&bootloader>;
         };
     };
 
@@ -312,7 +175,7 @@
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 
                  &mkp LCLK                                                                                              &btswitch
-         &msc SCRL_UP                  &msc SCRL_DOWN           &mkp LCLK                   &rcm CLCK RCLK                          &shiftapp
+         &msc SCRL_UP                  &msc SCRL_DOWN           &mkp LCLK                   &rcm CLCK RCLK                          &kp LA(TAB)
     &bhm HASH Q  &bhm N1 W  &bhm N2 E  &bhm N3 R  &bhm LEFT T       &bhm RIGHT Y   &bhm UNDER U      &bhm MINUS I  &bhm PLUS O  &bhm AT P
     &bhm STAR A  &bhm N4 S  &bhm N5 D  &bhm N6 F  &bhm KP_DIVIDE G  &bhm COLON H   &bhm SEMI J       &bhm DQT K    &bhm APOS L  &kp BSPC
     &sk LSHFT    &bhm N7 Z  &bhm N8 X  &bhm N9 C  &bhm QMARK V      &bhm EXCL B    &bhm COMMA N      &bhm DOT M    &tdrshift    &kp ENTER
@@ -325,7 +188,7 @@
 
             bindings = <        
         &mkp LCLK                                                                                                    &btswitch
-        &msc SCRL_UP                  &msc SCRL_DOWN           &mkp LCLK             &rcm CLCK RCLK                                    &shiftapp 
+        &msc SCRL_UP                  &msc SCRL_DOWN           &mkp LCLK             &rcm CLCK RCLK                                    &kp LA(TAB) 
     &kp HASH     &kp N1     &kp N2      &kp N3    &bhm LEFT LPAR         &bhm RIGHT RPAR    &kp UNDER        &kp MINUS        &kp PLUS         &mt PRCNT AT
     &kp STAR     &kp N4     &kp N5      &kp N6    &mt BSLH KP_DIVIDE     &kp COLON          &kp SEMI         &kp DQT          &kp APOS         &kp BSPC
     &sk LSHFT    &kp N7     &kp N8      &kp N9    &kp QMARK              &kp EXCL           &kp COMMA        &kp DOT          &mt C_MUTE DLLR  &kp ENTER
@@ -338,7 +201,7 @@
             bindings = <
         &mkp LCLK                                                                                                 &btswitch
         &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &kp LA(TAB)
-    &tdclosewindow         &kp LC(W)             &kp LC(END)            &kp LC(R)               &kp LC(T)             &none               &none       &kp C_VOL_DN          &kp C_VOL_UP     &td2
+    &tdclosewindow         &tdclosetab           &kp LC(END)            &kp LC(R)               &kp LC(T)             &none               &none       &kp C_VOL_DN          &kp C_VOL_UP     &td2
     &kp LC(A)              &kp LEFT              &kp RIGHT              &kp LA(RIGHT)           &none                 &kp LC(HOME)        &none       &none                 &none            &mt DEL BSPC
     &kp ESC                &kp LC(Z)             &kp LC(X)              &kp LC(C)               &kp LC(V)             &kp LA(LEFT)        &none       &kp LG(D)             &td1             &kp ENTER
             &msc SCRL_UP          &msc SCRL_DOWN            &td3                     &tdtosym              &tdtodefault
