@@ -75,7 +75,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings =<kp LG(SPACE)>, <&kp RSHFT>;
+            bindings =<&kp LG(SPACE)>, <&kp RSHFT>;
         };
     };
 
@@ -105,7 +105,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            bindings = <&kp SPACE>, <&bootloader>;
+            bindings = <&kp SPACE &kp SPACE &kp SPACE &kp SPACE>, <&bootloader>;
         };
     };
 
