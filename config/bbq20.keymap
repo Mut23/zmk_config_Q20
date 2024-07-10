@@ -33,7 +33,7 @@
         };
     };
 
-   //单击返回，长按Capslock或浏览器返回
+   //单击返回，长按浏览器返回
     behaviors {
         rcm: rclick_capslock_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -84,6 +84,26 @@
             #binding-cells = <0>;
             tapping-term-ms = <400>;
             bindings =<&kp LG(SPACE)>, <&kp RSHFT>;
+        };
+    };
+
+   //单击LShift，双击Capslock
+    behaviors {
+        tdlscaplok: tap_dance_lscaplok {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings =<&sk LSHFT>, <&kp CLCK>;
+        };
+    };
+
+   //单击ESC，双击Capslock
+    behaviors {
+        tdesccaplok: tap_dance_esccaplok {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings =<&kp ESC>, <&kp CLCK>;
         };
     };
 
@@ -183,10 +203,10 @@
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 
                  &mkp LCLK                                                                                              &btswitch
-         &msc SCRL_UP                  &msc SCRL_DOWN           &mkp LCLK                   &rcm CLCK RCLK                          &kp LA(TAB)
-    &bhm HASH Q  &bhm N1 W  &bhm N2 E  &bhm N3 R  &bhm LEFT T       &bhm RIGHT Y   &bhm UNDER U      &bhm MINUS I  &bhm PLUS O  &bhm AT P
-    &bhm STAR A  &bhm N4 S  &bhm N5 D  &bhm N6 F  &bhm KP_DIVIDE G  &bhm COLON H   &bhm SEMI J       &bhm DQT K    &bhm APOS L  &kp BSPC
-    &sk LSHFT    &bhm N7 Z  &bhm N8 X  &bhm N9 C  &bhm QMARK V      &bhm EXCL B    &bhm COMMA N      &bhm DOT M    &tdrshift    &kp ENTER
+         &msc SCRL_UP                  &msc SCRL_DOWN           &mkp LCLK                   &rcm LA(LEFT) RCLK                          &kp LA(TAB)
+    &bhm HASH Q    &bhm N1 W    &bhm N2 E    &bhm N3 R    &bhm LEFT T         &bhm RIGHT Y     &bhm UNDER U      &bhm MINUS I    &bhm PLUS O    &bhm AT P
+    &bhm STAR A    &bhm N4 S    &bhm N5 D    &bhm N6 F    &bhm KP_DIVIDE G    &bhm COLON H     &bhm SEMI J       &bhm DQT K      &bhm APOS L    &kp BSPC
+    &tdlscaplok    &bhm N7 Z    &bhm N8 X    &bhm N9 C    &bhm QMARK V        &bhm EXCL B      &bhm COMMA N      &bhm DOT M      &tdrshift      &kp ENTER
                  &sk LCTRL        &kp N0                   &kp SPACE                     &tdtosym             &tdtoupper
             >;
         };
@@ -196,11 +216,11 @@
 
             bindings = <        
         &mkp LCLK                                                                                                    &btswitch
-        &msc SCRL_UP                  &msc SCRL_DOWN           &mkp LCLK             &rcm CLCK RCLK                                    &kp LA(TAB) 
-    &kp HASH     &kp N1     &kp N2      &kp N3    &bhm LEFT LPAR         &bhm RIGHT RPAR    &kp UNDER        &kp MINUS        &kp PLUS         &mt PRCNT AT
-    &kp STAR     &kp N4     &kp N5      &kp N6    &mt BSLH KP_DIVIDE     &kp COLON          &kp SEMI         &kp DQT          &kp APOS         &kp BSPC
-    &sk LSHFT    &kp N7     &kp N8      &kp N9    &kp QMARK              &kp EXCL           &kp COMMA        &kp DOT          &mt C_MUTE DLLR  &kp ENTER
-            &none                &kp N0                    &kp SPACE                &tdtodefault           &tdtoupper
+        &msc SCRL_UP                  &msc SCRL_DOWN           &mkp LCLK             &rcm LA(LEFT) RCLK                                    &kp LA(TAB) 
+    &kp HASH       &kp N1     &kp N2      &kp N3    &bhm LEFT LPAR         &bhm RIGHT RPAR    &kp UNDER     &kp MINUS      &kp PLUS           &mt PRCNT AT
+    &kp STAR       &kp N4     &kp N5      &kp N6    &mt BSLH KP_DIVIDE     &kp COLON          &kp SEMI      &kp DQT        &kp APOS           &kp BSPC
+    &tdlscaplok    &kp N7     &kp N8      &kp N9    &kp QMARK              &kp EXCL           &kp COMMA     &kp DOT        &mt C_MUTE DLLR    &kp ENTER
+                 &none                &kp N0                    &kp SPACE                &tdtodefault           &tdtoupper
             >;
         };
 
@@ -209,10 +229,10 @@
             bindings = <
         &mkp LCLK                                                                                                 &btswitch
         &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &kp LA(TAB)
-    &tdclosewindow         &tdclosetab           &kp LC(END)            &kp LC(R)               &kp LC(T)             &none               &none       &kp C_VOL_DN          &kp C_VOL_UP     &td2
-    &kp LC(A)              &kp LEFT              &kp RIGHT              &kp LA(RIGHT)           &none                 &kp LC(HOME)        &none       &none                 &none            &mt DEL BSPC
-    &kp ESC                &kp LC(Z)             &kp LC(X)              &kp LC(C)               &kp LC(V)             &kp LA(LEFT)        &none       &kp LG(D)             &td1             &kp ENTER
-            &msc SCRL_UP          &msc SCRL_DOWN            &td3                     &tdtosym              &tdtodefault
+    &tdclosewindow     &tdclosetab       &kp LC(END)      &kp LC(R)         &kp LC(T)      &none             &none       &kp C_VOL_DN      &kp C_VOL_UP     &td2
+    &kp LC(A)          &kp LEFT          &kp RIGHT        &kp LA(RIGHT)     &none          &kp LC(HOME)      &none       &none             &none            &mt DEL BSPC
+    &tdesccaplok       &kp LC(Z)         &kp LC(X)        &kp LC(C)         &kp LC(V)      &kp LA(LEFT)      &none       &kp LG(D)         &td1             &kp ENTER
+                  &msc SCRL_UP          &msc SCRL_DOWN            &td3                     &tdtosym              &tdtodefault
             >;
         };
     };
