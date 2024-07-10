@@ -75,6 +75,13 @@
             #binding-cells = <0>;
             bindings =<&macro_tap &kp SPACE &kp SPACE &kp SPACE &kp SPACE>;
         }; 
+
+        //切换程序
+        shiftapp: zen_em_shiftapp{
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =<&macro_press &kp LA(TAB)>, <&macro_tap &kp LA(TAB)>, <&macro_wait_time 500>, <&macro_release &kp LA(TAB)>;
+        }; 
   };
 
    //单击PC切换输入法，双击RShift
@@ -203,7 +210,7 @@
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 
                  &mkp LCLK                                                                                              &btswitch
-         &msc SCRL_UP                  &msc SCRL_DOWN           &mkp LCLK                   &rcm LA(LEFT) RCLK                          &kp LA(TAB)
+         &msc SCRL_UP                  &msc SCRL_DOWN           &mkp LCLK                   &rcm LA(LEFT) RCLK                          &shiftapp
     &bhm HASH Q    &bhm N1 W    &bhm N2 E    &bhm N3 R    &bhm LEFT T         &bhm RIGHT Y     &bhm UNDER U      &bhm MINUS I    &bhm PLUS O    &bhm AT P
     &bhm STAR A    &bhm N4 S    &bhm N5 D    &bhm N6 F    &bhm KP_DIVIDE G    &bhm COLON H     &bhm SEMI J       &bhm DQT K      &bhm APOS L    &kp BSPC
     &tdlscaplok    &bhm N7 Z    &bhm N8 X    &bhm N9 C    &bhm QMARK V        &bhm EXCL B      &bhm COMMA N      &bhm DOT M      &tdrshift      &kp ENTER
@@ -216,7 +223,7 @@
 
             bindings = <        
         &mkp LCLK                                                                                                    &btswitch
-        &msc SCRL_UP                  &msc SCRL_DOWN           &mkp LCLK             &rcm LA(LEFT) RCLK                                    &kp LA(TAB) 
+        &msc SCRL_UP                  &msc SCRL_DOWN           &mkp LCLK             &rcm LA(LEFT) RCLK                                    &shiftapp 
     &kp HASH       &kp N1     &kp N2      &kp N3    &bhm LEFT LPAR         &bhm RIGHT RPAR    &kp UNDER     &kp MINUS      &kp PLUS           &mt PRCNT AT
     &kp STAR       &kp N4     &kp N5      &kp N6    &mt BSLH KP_DIVIDE     &kp COLON          &kp SEMI      &kp DQT        &kp APOS           &kp BSPC
     &tdlscaplok    &kp N7     &kp N8      &kp N9    &kp QMARK              &kp EXCL           &kp COMMA     &kp DOT        &mt C_MUTE DLLR    &kp ENTER
@@ -228,7 +235,7 @@
 
             bindings = <
         &mkp LCLK                                                                                                 &btswitch
-        &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &kp LA(TAB)
+        &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &shiftapp
     &tdclosewindow     &tdclosetab       &kp LC(END)      &kp LC(R)         &kp LC(T)      &none             &none       &kp C_VOL_DN      &kp C_VOL_UP     &td2
     &kp LC(A)          &kp LEFT          &kp RIGHT        &kp LA(RIGHT)     &none          &kp LC(HOME)      &none       &none             &none            &mt DEL BSPC
     &tdesccaplok       &kp LC(Z)         &kp LC(X)        &kp LC(C)         &kp LC(V)      &kp LA(LEFT)      &none       &kp LG(D)         &td1             &kp ENTER
