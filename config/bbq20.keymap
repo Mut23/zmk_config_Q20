@@ -144,16 +144,6 @@
         };
     };
 
-   //双击进入层UPPER
-    behaviors {
-        tdtoupper: tap_dance_toupper {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            bindings = <&none>, <&to UPPER>;
-        };
-    };
-
    //单击截图，双击键盘软重启
     behaviors {
         td2: tap_dance_2 {
