@@ -208,7 +208,7 @@
         &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &shiftapp
     &tdclosewindow     &tdclosetab       &kp LC(END)      &kp LC(R)         &kp LC(T)      &none             &none       &kp C_VOL_DN      &kp C_VOL_UP     &td2
     &kp LC(A)          &kp LEFT          &kp RIGHT        &kp LA(RIGHT)     &none          &kp LC(HOME)      &none       &none             &none            &mt DEL BSPC
-    &tdesccaplok       &kp LC(Z)         &kp LC(X)        &kp LC(C)         &kp LC(V)      &mkp RCLK         &none       &kp LG(D)         &td1             &kp ENTER
+    &tdesccaplok       &kp LC(Z)         &kp LC(X)        &kp LC(C)         &kp LC(V)      &mkp RCLK         &mkp RCLK   &kp LG(D)         &td1             &kp ENTER
                   &msc SCRL_UP          &msc SCRL_DOWN            &mkp LCLK                       &to SYM              &to DEFAULT
             >;
         };
