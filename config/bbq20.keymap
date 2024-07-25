@@ -154,13 +154,13 @@
         };
     };
 
-   //单击截图，双击键盘软重启
+   //双击键盘软重启
     behaviors {
         td2: tap_dance_2 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&kp PSCRN>, <&sys_reset>;
+            bindings = <&none>, <&sys_reset>;
         };
     };
 
@@ -206,7 +206,7 @@
             bindings = <
         &mkp LCLK                                                                                                 &btswitch
         &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &shiftapp
-    &tdclosewindow     &tdclosetab       &kp LC(END)      &kp LC(R)         &kp LC(T)      &none             &none       &kp C_VOL_DN      &kp C_VOL_UP     &td2
+    &tdclosewindow     &tdclosetab       &kp LC(END)      &kp LC(R)         &kp LC(T)      &kp LC(Y)         &none       &kp C_VOL_DN      &kp C_VOL_UP     &td2
     &kp LC(A)          &kp LEFT          &kp RIGHT        &kp LA(RIGHT)     &none          &kp LC(HOME)      &none       &none             &none            &mt DEL BSPC
     &tdesccaplok       &kp LC(Z)         &kp LC(X)        &kp LC(C)         &kp LC(V)      &mkp RCLK         &mkp RCLK   &kp LG(D)         &td1             &kp ENTER
                   &msc SCRL_UP          &msc SCRL_DOWN            &mkp LCLK                       &to SYM              &to DEFAULT
