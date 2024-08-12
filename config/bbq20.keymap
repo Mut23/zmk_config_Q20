@@ -168,7 +168,7 @@
         td2: tap_dance_2 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
             bindings = <&mkp LCLK>, <&mkp RCLK>;
         };
     };
