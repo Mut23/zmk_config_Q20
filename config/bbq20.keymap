@@ -14,8 +14,8 @@
 
 
 #define DEFAULT 0
-#define SYM 1
-#define UPPER 2
+#define UPPER 1
+#define SYM 2
 
 &sk {
        release-after-ms = <2500>;
@@ -59,14 +59,14 @@
         tobt0: zed_em_tobt0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &bt BT_SEL 0>,<&macro_tap &to UPPER>;
+            bindings = <&macro_tap &bt BT_SEL 0>,<&macro_tap &to DEFAULT>;
         };
 
         //切换设备2
         tobt1: zed_em_tobt1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &bt BT_SEL 1>,<&macro_tap &to UPPER>;
+            bindings = <&macro_tap &bt BT_SEL 1>,<&macro_tap &to DEFAULT>;
         };
 
         //解锁密码
@@ -120,7 +120,17 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings =<&kp Q>, <&kp LA(F4)>;
+            bindings =<&none>, <&kp LA(F4)>;
+        };
+    };
+
+   //双击回到桌面
+    behaviors {
+        tdgohome: tap_dance_gohome {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings =<&kp LG(D)>, <&kp LA(ESC)>;
         };
     };
 
@@ -140,27 +150,36 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings =<&kp R>, <&kp LC(R)>;
+            bindings =<&none>, <&kp LC(R)>;
         };
     };
 
-   //单击输入解锁密码，双击进入bootloder
+   //快速双击软重启
     behaviors {
         td1: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            bindings = <&pwd>, <&bootloader>;
+            tapping-term-ms = <300>;
+            bindings = <&none>, <&sys_reset>;
         };
     };
-
-   //双击键盘软重启
+ 
     behaviors {
         td2: tap_dance_2 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mkp LCLK>, <&mkp RCLK>;
+        };
+    };
+
+    //单击临时sym层，双击进入sym层
+    behaviors {
+        td3: tap_dance_3 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&none>, <&sys_reset>;
+            bindings = <&sl SYM>, <&to SYM>;
         };
     };
 
@@ -179,38 +198,38 @@
 //        |         aA     |         0           |           SPACE              |         SYM         |        aA          |       
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 
-                 &mkp LCLK                                                                                              &btswitch
-         &msc SCRL_UP                  &msc SCRL_DOWN           &mkp LCLK                   &mkp RCLK                          &shiftapp
-    &bhm HASH Q    &bhm N1 W    &bhm N2 E    &bhm N3 R    &bhm LEFT T         &bhm RIGHT Y     &bhm UNDER U      &bhm MINUS I    &bhm PLUS O    &bhm AT P
-    &bhm STAR A    &bhm N4 S    &bhm N5 D    &bhm N6 F    &bhm KP_DIVIDE G    &bhm COLON H     &bhm SEMI J       &bhm DQT K      &bhm APOS L    &kp BSPC
-    &sk LSHFT      &bhm N7 Z    &bhm N8 X    &bhm N9 C    &bhm QMARK V        &bhm EXCL B      &bhm COMMA N      &bhm DOT M      &tdrshift      &kp ENTER
-                 &sk LCTRL        &kp N0                   &kp SPACE                     &sl 1             &tdtoupper
-            >;
-        };
-
-
-        sym_layer {
-
-            bindings = <        
-        &none                                                                                                    &none
-       &none                       &none                &none            &none                              &none 
-    &kp HASH       &kp N1     &kp N2      &kp N3    &bhm LEFT LPAR         &bhm RIGHT RPAR    &kp UNDER     &kp MINUS      &kp PLUS           &mt PRCNT AT
-    &kp STAR       &kp N4     &kp N5      &kp N6    &mt BSLH KP_DIVIDE     &kp COLON          &kp SEMI      &kp DQT        &kp APOS           &kp BSPC
-    &none          &kp N7     &kp N8      &kp N9    &kp QMARK              &kp EXCL           &kp COMMA     &kp DOT        &mt C_MUTE DLLR    &kp ENTER
-           &none          &kp N0                    &none                     &kp CLCK               &none
+        &mkp LCLK                                                                                                 &btswitch
+        &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &shiftapp
+    &kp LC(Q)          &tdclosetab      &kp UP          &tdrefresh        &kp LC(T)      &kp LC(HOME)           &kp LC(END)          &bhm C_MUTE C_VOL_DN      &kp C_VOL_UP       &tdclosewindow
+    &kp LC(A)          &kp LEFT         &kp DOWN        &kp RIGHT         &tdgohome      &msc SCRL_UP           &msc SCRL_UP         &msc SCRL_DOWN            &msc SCRL_DOWN     &bhm DEL BSPC
+    &pwd               &kp LC(Z)        &kp LC(X)       &kp LC(C)         &kp LC(V)      &msc SCRL_UP           &msc SCRL_UP         &msc SCRL_DOWN            &msc SCRL_DOWN     &kp ENTER
+                  &kp ESC         &rcm LA(LEFT) RCLK                 &td2                       &kp CLCK             &tdtoupper
             >;
         };
 
         upper_layer {
 
             bindings = <
-        &mkp LCLK                                                                                                 &btswitch
-        &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &shiftapp
-    &tdclosewindow     &tdclosetab      &kp UP          &tdrefresh        &kp LC(T)      &kp LC(Y)              &none                &kp C_VOL_DN      &kp C_VOL_UP     &td2
-    &kp LC(A)          &kp LEFT         &kp DOWN        &kp RIGHT         &kp LA(ESC)    &kp LC(HOME)           &kp LC(END)          &none             &none            &mt DEL BSPC
-    &kp ESC            &kp LC(Z)        &kp LC(X)       &kp LC(C)         &kp LC(V)      &rcm LA(LEFT) RCLK     &rcm LA(LEFT) RCLK   &kp LG(D)         &td1             &kp ENTER
-                  &msc SCRL_UP          &msc SCRL_DOWN            &mkp LCLK                       &kp CLCK             &tdtodefault
+                 &mkp LCLK                                                                                              &btswitch
+         &msc SCRL_UP                  &msc SCRL_DOWN           &mkp LCLK                   &rcm LA(LEFT) RCLK                          &shiftapp
+    &kp Q          &bhm N1 W    &bhm N2 E    &bhm N3 R    &kp T      &kp Y      &kp U       &kp I      &kp O        &kp P
+    &kp A          &bhm N4 S    &bhm N5 D    &bhm N6 F    &kp G      &kp H      &kp J       &kp K      &kp L        &kp BSPC
+    &sk LSHFT      &bhm N7 Z    &bhm N8 X    &bhm N9 C    &kp V      &kp B      &kp N       &kp M      &tdrshift    &kp ENTER
+                 &sk LCTRL        &kp N0                   &kp SPACE                     &td3             &tdtodefault
             >;
         };
+
+        sym_layer {
+
+            bindings = <        
+        &none                                                                                                    &none
+       &none                       &none                &none            &none                              &none 
+    &kp HASH       &kp N1           &bhm UP N2        &kp N3           &kp LPAR               &kp RPAR           &kp UNDER     &kp MINUS      &kp PLUS       &bhm PRCNT AT
+    &kp STAR       &bhm LEFT N4     &bhm DOWN N5      &bhm RIGHT N6    &bhm BSLH KP_DIVIDE    &kp COLON          &kp SEMI      &kp DQT        &kp APOS       &kp BSPC
+    &td1           &kp N7           &kp N8            &kp N9           &kp QMARK              &kp EXCL           &kp COMMA     &kp DOT        &kp DLLR       &kp ENTER
+           &none          &kp N0                    &none                     &tdtoupper               &none
+            >;
+        };
+
     };
 }; 
