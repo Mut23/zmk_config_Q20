@@ -80,7 +80,7 @@
         shiftapp: zen_em_shiftapp{
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =<&macro_press &kt LALT>, <&macro_tap &kp TAB>, <&macro_release &kp TAB>, <&macro_release &kt LALT>;
+            bindings =<&macro_press &kt LALT>, <&macro_tap &kp LALT>,<&macro_tap &kp TAB>, <&macro_release &kp TAB>, <&macro_release &kp LALT>;
         }; 
   };
 
