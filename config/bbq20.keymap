@@ -180,7 +180,7 @@
         compatible = "zmk,combos";
         combo_shiftapp {
             key-positions = <6>;
-            bindings = <&kp LA(TAB) &kp LEFT>;
+            bindings = <&kt LA(TAB) &kp LEFT>;
         };
     };
 
