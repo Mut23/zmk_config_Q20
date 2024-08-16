@@ -75,13 +75,6 @@
             #binding-cells = <0>;
             bindings =<&macro_tap &kp SPACE &kp SPACE &kp SPACE &kp SPACE>;
         }; 
-
-        //切换程序
-        shiftapp: zen_em_shiftapp{
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =<&macro_press &kt LALT>, <&macro_tap &kp LALT>,<&macro_tap &kp TAB>, <&macro_release &kp TAB>, <&macro_release &kp LALT>;
-        }; 
   };
 
    //单击PC切换输入法，双击RShift
@@ -183,6 +176,14 @@
         };
     };
 
+   combos {
+        compatible = "zmk,combos";
+        combo_shiftapp {
+            key-positions = <6>;
+            bindings = <&kp LA(TAB) &kp LEFT>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -199,7 +200,7 @@
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 
         &mkp LCLK                                                                                                 &btswitch
-        &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &shiftapp
+        &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &none
     &kp LC(Q)          &tdclosetab      &kp UP          &tdrefresh        &kp LC(T)      &kp LC(HOME)           &kp LC(END)          &bhm C_MUTE C_VOL_DN      &kp C_VOL_UP       &tdclosewindow
     &kp LC(A)          &kp LEFT         &kp DOWN        &kp RIGHT         &tdgohome      &msc SCRL_UP           &msc SCRL_UP         &msc SCRL_DOWN            &msc SCRL_DOWN     &bhm DEL BSPC
     &pwd               &kp LC(Z)        &kp LC(X)       &kp LC(C)         &kp LC(V)      &msc SCRL_UP           &msc SCRL_UP         &msc SCRL_DOWN            &msc SCRL_DOWN     &kp ENTER
@@ -211,7 +212,7 @@
 
             bindings = <
                  &mkp LCLK                                                                                              &btswitch
-         &msc SCRL_UP                  &msc SCRL_DOWN           &mkp LCLK                   &rcm LA(LEFT) RCLK                          &shiftapp
+         &msc SCRL_UP                  &msc SCRL_DOWN           &mkp LCLK                   &rcm LA(LEFT) RCLK                          &none
     &kp Q          &bhm N1 W    &bhm N2 E    &bhm N3 R    &kp T      &kp Y      &kp U       &kp I      &kp O        &kp P
     &kp A          &bhm N4 S    &bhm N5 D    &bhm N6 F    &kp G      &kp H      &kp J       &kp K      &kp L        &kp BSPC
     &sk LSHFT      &bhm N7 Z    &bhm N8 X    &bhm N9 C    &kp V      &kp B      &kp N       &kp M      &tdrshift    &kp ENTER
