@@ -181,7 +181,6 @@
         combo_shiftapp {
             key-positions = <6>;
             bindings = <&kt LA(TAB)>;
-            slow-release;
         };
     };
 
