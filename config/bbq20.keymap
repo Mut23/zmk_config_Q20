@@ -179,7 +179,9 @@
    combos {
         compatible = "zmk,combos";
         combo_shiftapp {
+            timeout-ms = <800>; 
             key-positions = <3>;
+            slow-release;
             bindings = <&kp LA(TAB)>;
         };
     };
