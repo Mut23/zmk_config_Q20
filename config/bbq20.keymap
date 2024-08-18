@@ -174,7 +174,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <350>;
-            bindings = <&kp LA(TAB)>, <&kp LA(TAB) &kp LEFT>;
+            bindings = <&kp LA(TAB)>, <&kp CLCK>;
         };
     };
 
@@ -195,10 +195,10 @@
 
         &mkp LCLK                                                                                                 &btswitch
         &msc SCRL_UP                   &tdshiftapp             &mkp LCLK              &rcm LA(LEFT) RCLK                            &msc SCRL_DOWN
-    &kp LC(Q)          &tdclosetab      &kp UP          &tdrefresh        &kp LC(T)      &bhm LC(HOME) Y        &bhm LC(END) U       &bhm C_VOL_DN AMPS        &bhm C_VOL_UP EQUAL    &tdclosewindow
-    &kp LC(A)          &kp LEFT         &kp DOWN        &kp RIGHT         &kp LC(G)      &msc SCRL_UP           &msc SCRL_UP         &msc SCRL_DOWN            &msc SCRL_DOWN         &bhm DEL BSPC
-    &tdgohome          &kp LC(Z)        &kp LC(X)       &kp LC(C)         &kp LC(V)      &msc SCRL_UP           &msc SCRL_UP         &msc SCRL_DOWN            &msc SCRL_DOWN         &kp ENTER
-                  &kp ESC         &rcm LA(LEFT) RCLK                 &td2                       &kp CLCK             &tdtoupper
+    &kp LC(Q)          &tdclosetab      &kp UP          &tdrefresh        &kp LC(T)      &kp LC(Y)           &kp LC(U)          &kp C_VOL_DN        &kp C_VOL_UP      &tdclosewindow
+    &kp LC(A)          &kp LEFT         &kp DOWN        &kp RIGHT         &kp LC(G)      &kp LC(HOME)        &kp LC(END)        &kp AMPS            &kp EQUAL         &bhm DEL BSPC
+    &tdgohome          &kp LC(Z)        &kp LC(X)       &kp LC(C)         &kp LC(V)      &kp LC(B)           &kp LC(N)          &kp LC(M)           &kp C_MUTE        &kp ENTER
+                  &kp ESC         &msc SCRL_UP                 &td2                       &msc SCRL_DOWN             &tdtoupper
             >;
         };
 
