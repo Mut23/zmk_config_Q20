@@ -59,7 +59,7 @@
         tobt0: zed_em_tobt0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &bt BT_SEL 0>,<&macro_tap &to DEFAULT>;
+            bindings = <&macro_tap &bt BT_SEL 0>,<&macro_tap &kp SPACE &kp SPACE &kp SPACE &kp SPACE>,<&macro_tap &to DEFAULT>;
         };
 
         //切换设备2
@@ -68,13 +68,6 @@
             #binding-cells = <0>;
             bindings = <&macro_tap &bt BT_SEL 1>,<&macro_tap &to DEFAULT>;
         };
-
-        //解锁密码
-        pwd: zen_em_pwd{
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =<&macro_tap &kp SPACE &kp SPACE &kp SPACE &kp SPACE>;
-        }; 
   };
 
    //单击PC切换输入法，双击RShift
@@ -203,8 +196,8 @@
         &mkp LCLK                                                                                                 &btswitch
         &msc SCRL_UP                   &tdshiftapp             &mkp LCLK              &rcm LA(LEFT) RCLK                            &msc SCRL_DOWN
     &kp LC(Q)          &tdclosetab      &kp UP          &tdrefresh        &kp LC(T)      &bhm LC(HOME) Y        &bhm LC(END) U       &bhm C_VOL_DN AMPS        &bhm C_VOL_UP EQUAL    &tdclosewindow
-    &kp LC(A)          &kp LEFT         &kp DOWN        &kp RIGHT         &tdgohome      &msc SCRL_UP           &msc SCRL_UP         &msc SCRL_DOWN            &msc SCRL_DOWN         &bhm DEL BSPC
-    &pwd               &kp LC(Z)        &kp LC(X)       &kp LC(C)         &kp LC(V)      &msc SCRL_UP           &msc SCRL_UP         &msc SCRL_DOWN            &msc SCRL_DOWN         &kp ENTER
+    &kp LC(A)          &kp LEFT         &kp DOWN        &kp RIGHT         &kp LC(G)      &msc SCRL_UP           &msc SCRL_UP         &msc SCRL_DOWN            &msc SCRL_DOWN         &bhm DEL BSPC
+    &tdgohome          &kp LC(Z)        &kp LC(X)       &kp LC(C)         &kp LC(V)      &msc SCRL_UP           &msc SCRL_UP         &msc SCRL_DOWN            &msc SCRL_DOWN         &kp ENTER
                   &kp ESC         &rcm LA(LEFT) RCLK                 &td2                       &kp CLCK             &tdtoupper
             >;
         };
