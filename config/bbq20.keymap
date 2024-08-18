@@ -28,7 +28,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <280>;
+            tapping-term-ms = <400>;
             bindings = <&kp>, <&kp>;
         };
     };
@@ -181,7 +181,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <350>;
-            bindings = <&kp LA(TAB)>, <&kp LA(TAB)>;
+            bindings = <&kp LA(TAB)>, <&kp LA(TAB) &kp LEFT>;
         };
     };
 
@@ -202,9 +202,9 @@
 
         &mkp LCLK                                                                                                 &btswitch
         &msc SCRL_UP                   &tdshiftapp             &mkp LCLK              &rcm LA(LEFT) RCLK                            &msc SCRL_DOWN
-    &kp LC(Q)          &tdclosetab      &kp UP          &tdrefresh        &kp LC(T)      &kp LC(HOME)           &kp LC(END)          &bhm C_MUTE C_VOL_DN      &kp C_VOL_UP       &tdclosewindow
-    &kp LC(A)          &kp LEFT         &kp DOWN        &kp RIGHT         &tdgohome      &msc SCRL_UP           &msc SCRL_UP         &msc SCRL_DOWN            &msc SCRL_DOWN     &bhm DEL BSPC
-    &pwd               &kp LC(Z)        &kp LC(X)       &kp LC(C)         &kp LC(V)      &msc SCRL_UP           &msc SCRL_UP         &msc SCRL_DOWN            &msc SCRL_DOWN     &kp ENTER
+    &kp LC(Q)          &tdclosetab      &kp UP          &tdrefresh        &kp LC(T)      &bhm LC(HOME) Y        &bhm LC(END) U       &bhm C_VOL_DN AMPS        &bhm C_VOL_UP EQUAL    &tdclosewindow
+    &kp LC(A)          &kp LEFT         &kp DOWN        &kp RIGHT         &tdgohome      &msc SCRL_UP           &msc SCRL_UP         &msc SCRL_DOWN            &msc SCRL_DOWN         &bhm DEL BSPC
+    &pwd               &kp LC(Z)        &kp LC(X)       &kp LC(C)         &kp LC(V)      &msc SCRL_UP           &msc SCRL_UP         &msc SCRL_DOWN            &msc SCRL_DOWN         &kp ENTER
                   &kp ESC         &rcm LA(LEFT) RCLK                 &td2                       &kp CLCK             &tdtoupper
             >;
         };
