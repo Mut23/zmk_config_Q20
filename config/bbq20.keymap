@@ -80,7 +80,7 @@
         };
     };
 
-   //双击进入层UPPER
+   //单击临时进入层UPPER，双击进入层UPPER
     behaviors {
         tdtoupper: tap_dance_toupper {
             compatible = "zmk,behavior-tap-dance";
@@ -149,19 +149,10 @@
             bindings = <&none>, <&sys_reset>;
         };
     };
- 
-    behaviors {
-        td2: tap_dance_2 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mkp LCLK>, <&mkp RCLK>;
-        };
-    };
 
     //单击临时sym层，双击进入sym层
     behaviors {
-        td3: tap_dance_3 {
+        tdtosym: tap_dance_tosym {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
@@ -195,10 +186,10 @@
 
         &mkp LCLK                                                                                                 &btswitch
         &msc SCRL_UP                   &tdshiftapp             &mkp LCLK              &rcm LA(LEFT) RCLK                            &msc SCRL_DOWN
-    &kp LC(Q)          &tdclosetab      &kp UP          &tdrefresh        &kp LC(T)      &kp LC(Y)           &kp LC(U)          &kp C_VOL_DN        &kp C_VOL_UP      &tdclosewindow
+    &kp LC(Q)          &tdclosetab      &kp UP          &tdrefresh        &kp LC(T)      &kp LC(Y)           &none              &kp C_VOL_DN        &kp C_VOL_UP      &tdclosewindow
     &kp LC(A)          &kp LEFT         &kp DOWN        &kp RIGHT         &kp LC(G)      &kp LC(HOME)        &kp LC(END)        &kp AMPS            &kp EQUAL         &bhm DEL BSPC
-    &tdgohome          &kp LC(Z)        &kp LC(X)       &kp LC(C)         &kp LC(V)      &kp LC(B)           &kp LC(N)          &kp LC(M)           &kp C_MUTE        &kp ENTER
-                  &kp ESC         &msc SCRL_UP                 &td2                       &msc SCRL_DOWN             &tdtoupper
+    &tdgohome          &kp LC(Z)        &kp LC(X)       &kp LC(C)         &kp LC(V)      &mkp RCLK           &none              &kp LC(M)           &kp C_MUTE        &kp ENTER
+                  &kp ESC         &msc SCRL_UP                 &mkp LCLK                       &msc SCRL_DOWN             &tdtoupper
             >;
         };
 
@@ -210,7 +201,7 @@
     &kp Q          &bhm N1 W    &bhm N2 E    &bhm N3 R    &kp T      &kp Y      &kp U       &kp I      &kp O        &kp P
     &kp A          &bhm N4 S    &bhm N5 D    &bhm N6 F    &kp G      &kp H      &kp J       &kp K      &kp L        &kp BSPC
     &sk LSHFT      &bhm N7 Z    &bhm N8 X    &bhm N9 C    &kp V      &kp B      &kp N       &kp M      &tdrshift    &kp ENTER
-                 &sk LCTRL        &kp N0                   &kp SPACE                     &td3             &tdtodefault
+                 &sk LCTRL        &kp N0                   &kp SPACE                     &tdtosym             &tdtodefault
             >;
         };
 
