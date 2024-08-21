@@ -80,26 +80,6 @@
         };
     };
 
-   //单击临时进入层UPPER，双击进入层UPPER
-    behaviors {
-        tdtoupper: tap_dance_toupper {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <350>;
-            bindings = <&sl UPPER>, <&to UPPER>;
-        };
-    };
-
-   //双击进入层DEFAULT
-    behaviors {
-        tdtodefault: tap_dance_todefault {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <350>;
-            bindings = <&none>, <&to DEFAULT>;
-        };
-    };
-
    //双击关闭程序
     behaviors {
         tdclosewindow: tap_dance_closewindow {
@@ -142,7 +122,7 @@
 
    //快速双击软重启
     behaviors {
-        td1: tap_dance_1 {
+        tdreset: tap_dance_reset {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
@@ -165,7 +145,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <350>;
-            bindings = <&kp LA(TAB)>, <&kp CLCK>;
+            bindings = <&kp LA(TAB)>, <&kp LEFT>;
         };
     };
 
@@ -184,24 +164,24 @@
 //        |         aA     |         0           |           SPACE              |         SYM         |        aA          |       
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 
-        &mkp LCLK                                                                                                 &btswitch
+        &to UPPER                                                                                                 &btswitch
         &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &tdshiftapp
     &kp LC(Q)          &tdclosetab      &kp UP          &tdrefresh        &kp LC(T)      &kp LC(Y)              &none              &kp C_VOL_DN        &kp C_VOL_UP      &tdclosewindow
     &kp LC(A)          &kp LEFT         &kp DOWN        &kp RIGHT         &kp LC(G)      &kp LC(HOME)           &kp LC(END)        &kp AMPS            &kp EQUAL         &bhm DEL BSPC
-    &kp ESC            &kp LC(Z)        &kp LC(X)       &kp LC(C)         &kp LC(V)      &none                  &none              &tdgohome           &kp C_MUTE        &kp ENTER
-                  &msc SCRL_UP     &msc SCRL_DOWN            &mkp LCLK                       &rcm LA(LEFT) RCLK             &tdtoupper
+    &kp ESC            &kp LC(Z)        &kp LC(X)       &kp LC(C)         &kp LC(V)      &none                  &none              &tdgohome           &kp CLCK        &kp ENTER
+                  &msc SCRL_UP     &msc SCRL_DOWN            &mkp LCLK                       &rcm LA(LEFT) RCLK             &tdshiftapp
             >;
         };
 
         upper_layer {
 
             bindings = <
-                 &mkp LCLK                                                                                              &btswitch
+                 &to DEFAULT                                                                                              &btswitch
         &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &tdshiftapp
     &kp Q          &bhm N1 W    &bhm N2 E    &bhm N3 R    &kp T      &kp Y      &kp U       &kp I      &kp O        &kp P
     &kp A          &bhm N4 S    &bhm N5 D    &bhm N6 F    &kp G      &kp H      &kp J       &kp K      &kp L        &kp BSPC
-    &sk LSHFT      &bhm N7 Z    &bhm N8 X    &bhm N9 C    &kp V      &kp B      &kp N       &kp M      &tdrshift    &kp ENTER
-                 &sk LCTRL        &kp N0                   &kp SPACE                     &tdtosym             &tdtodefault
+    &sk LSHFT      &bhm N7 Z    &bhm N8 X    &bhm N9 C    &kp V      &kp B      &kp N       &kp M      &kp CLCK     &kp ENTER
+                 &sk LCTRL        &kp N0                   &kp SPACE                     &tdtosym             &tdrshift
             >;
         };
 
@@ -212,8 +192,8 @@
         &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &tdshiftapp
     &kp HASH       &kp N1           &bhm UP N2        &kp N3           &kp LPAR               &kp RPAR           &kp UNDER     &kp MINUS      &kp PLUS       &bhm PRCNT AT
     &kp STAR       &bhm LEFT N4     &bhm DOWN N5      &bhm RIGHT N6    &bhm BSLH KP_DIVIDE    &kp COLON          &kp SEMI      &kp DQT        &kp APOS       &kp BSPC
-    &td1           &kp N7           &kp N8            &kp N9           &kp QMARK              &kp EXCL           &kp COMMA     &kp DOT        &kp DLLR       &kp ENTER
-           &none          &kp N0                    &kp SPACE                     &tdtoupper               &none
+    &tdreset       &kp N7           &kp N8            &kp N9           &kp QMARK              &kp EXCL           &kp COMMA     &kp DOT        &kp DLLR       &kp ENTER
+           &none          &kp N0                    &kp SPACE                     &to UPPER               &none
             >;
         };
 
