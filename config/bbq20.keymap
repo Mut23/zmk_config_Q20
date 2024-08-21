@@ -185,11 +185,11 @@
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 
         &mkp LCLK                                                                                                 &btswitch
-        &msc SCRL_UP                   &tdshiftapp             &mkp LCLK              &rcm LA(LEFT) RCLK                            &msc SCRL_DOWN
-    &kp LC(Q)          &tdclosetab      &kp UP          &tdrefresh        &kp LC(T)      &kp LC(Y)           &none              &kp C_VOL_DN        &kp C_VOL_UP      &tdclosewindow
-    &kp LC(A)          &kp LEFT         &kp DOWN        &kp RIGHT         &kp LC(G)      &kp LC(HOME)        &kp LC(END)        &kp AMPS            &kp EQUAL         &bhm DEL BSPC
-    &tdgohome          &kp LC(Z)        &kp LC(X)       &kp LC(C)         &kp LC(V)      &mkp RCLK           &none              &kp LC(M)           &kp C_MUTE        &kp ENTER
-                  &kp ESC         &msc SCRL_UP                 &mkp LCLK                       &msc SCRL_DOWN             &tdtoupper
+        &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &tdshiftapp
+    &kp LC(Q)          &tdclosetab      &kp UP          &tdrefresh        &kp LC(T)      &kp LC(Y)              &none              &kp C_VOL_DN        &kp C_VOL_UP      &tdclosewindow
+    &kp LC(A)          &kp LEFT         &kp DOWN        &kp RIGHT         &kp LC(G)      &kp LC(HOME)           &kp LC(END)        &kp AMPS            &kp EQUAL         &bhm DEL BSPC
+    &kp ESC            &kp LC(Z)        &kp LC(X)       &kp LC(C)         &kp LC(V)      &none                  &none              &tdgohome           &kp C_MUTE        &kp ENTER
+                  &msc SCRL_UP     &msc SCRL_DOWN            &mkp LCLK                       &rcm LA(LEFT) RCLK             &tdtoupper
             >;
         };
 
@@ -197,7 +197,7 @@
 
             bindings = <
                  &mkp LCLK                                                                                              &btswitch
-        &msc SCRL_UP                   &tdshiftapp             &mkp LCLK              &rcm LA(LEFT) RCLK                            &msc SCRL_DOWN
+        &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &tdshiftapp
     &kp Q          &bhm N1 W    &bhm N2 E    &bhm N3 R    &kp T      &kp Y      &kp U       &kp I      &kp O        &kp P
     &kp A          &bhm N4 S    &bhm N5 D    &bhm N6 F    &kp G      &kp H      &kp J       &kp K      &kp L        &kp BSPC
     &sk LSHFT      &bhm N7 Z    &bhm N8 X    &bhm N9 C    &kp V      &kp B      &kp N       &kp M      &tdrshift    &kp ENTER
@@ -209,11 +209,11 @@
 
             bindings = <        
         &none                                                                                                    &none
-        &msc SCRL_UP                   &tdshiftapp             &mkp LCLK              &rcm LA(LEFT) RCLK                            &msc SCRL_DOWN
+        &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &tdshiftapp
     &kp HASH       &kp N1           &bhm UP N2        &kp N3           &kp LPAR               &kp RPAR           &kp UNDER     &kp MINUS      &kp PLUS       &bhm PRCNT AT
     &kp STAR       &bhm LEFT N4     &bhm DOWN N5      &bhm RIGHT N6    &bhm BSLH KP_DIVIDE    &kp COLON          &kp SEMI      &kp DQT        &kp APOS       &kp BSPC
     &td1           &kp N7           &kp N8            &kp N9           &kp QMARK              &kp EXCL           &kp COMMA     &kp DOT        &kp DLLR       &kp ENTER
-           &none          &kp N0                    &none                     &tdtoupper               &none
+           &none          &kp N0                    &kp SPACE                     &tdtoupper               &none
             >;
         };
 
