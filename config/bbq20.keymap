@@ -164,8 +164,8 @@
 //        |         aA     |         0           |           SPACE              |         SYM         |        aA          |       
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 
-        &to UPPER                                                                                                 &btswitch
-        &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &tdshiftapp
+        &tdshiftapp                                                                                                 &btswitch
+        &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &to UPPER
     &kp LC(Q)          &tdclosetab      &kp UP          &tdrefresh        &kp LC(T)      &kp LC(Y)              &none              &kp C_VOL_DN        &kp C_VOL_UP      &tdclosewindow
     &kp LC(A)          &kp LEFT         &kp DOWN        &kp RIGHT         &kp LC(G)      &kp LC(HOME)           &kp LC(END)        &kp AMPS            &kp EQUAL         &bhm DEL BSPC
     &kp ESC            &kp LC(Z)        &kp LC(X)       &kp LC(C)         &kp LC(V)      &none                  &none              &tdgohome           &kp CLCK        &kp ENTER
@@ -176,8 +176,8 @@
         upper_layer {
 
             bindings = <
-                 &to DEFAULT                                                                                              &btswitch
-        &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &tdshiftapp
+                 &tdshiftapp                                                                                             &btswitch
+        &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &to DEFAULT
     &kp Q          &bhm N1 W    &bhm N2 E    &bhm N3 R    &kp T      &kp Y      &kp U       &kp I      &kp O        &kp P
     &kp A          &bhm N4 S    &bhm N5 D    &bhm N6 F    &kp G      &kp H      &kp J       &kp K      &kp L        &kp BSPC
     &sk LSHFT      &bhm N7 Z    &bhm N8 X    &bhm N9 C    &kp V      &kp B      &kp N       &kp M      &kp CLCK     &kp ENTER
