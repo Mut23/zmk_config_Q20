@@ -142,14 +142,10 @@
 
     behaviors {
         tdshiftapp: tap_dance_shiftapp {
-            //compatible = "zmk,behavior-tap-dance";
-            //#binding-cells = <0>;
-            //tapping-term-ms = <350>;
-            //bindings = <&kp LA(TAB)>, <&kp LEFT>;
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <400>;
+            tapping-term-ms = <250>;
             bindings = <&mkp>, <&kp>;
         };
     };
