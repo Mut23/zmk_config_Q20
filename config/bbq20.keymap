@@ -48,7 +48,7 @@
         tobt0: zed_em_tobt0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &bt BT_SEL 0>,<&macro_tap &kp N0 &kp N9 &kp N1 &kp N1>,<&macro_tap &to DEFAULT>;
+            bindings = <&macro_tap &bt BT_SEL 0>,<&macro_tap &kp ENTER &kp N0 &kp N9 &kp N1 &kp N1 &kp ENTER>,<&macro_tap &to DEFAULT>;
         };
 
         //切换设备2
@@ -56,7 +56,13 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap &bt BT_SEL 1>,<&macro_tap &to DEFAULT>;
-        };
+        }; 
+
+        mcshiftapp: zed_em_shiftapp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LALT>,<&macro_tap &kp TAB>;
+        }; 
   };
 
    //单击PC切换输入法，双击RShift
@@ -163,7 +169,7 @@
 //        |         aA     |         0           |           SPACE              |         SYM         |        aA          |       
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 
-        &htshiftapp LCLK LC(TAB)                                                                                                 &btswitch
+        &mcshiftapp                                                                                                 &btswitch
         &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &mt LA(LEFT) K_BACK                            &tdtoupper
     &kp LC(Q)          &tdclosetab      &kp UP          &tdrefresh        &kp LC(T)      &kp LC(Y)              &none              &kp C_VOL_DN        &kp C_VOL_UP      &tdclosewindow
     &kp LC(A)          &kp LEFT         &kp DOWN        &kp RIGHT         &kp LC(G)      &kp LC(HOME)           &kp LC(END)        &kp AMPS            &kp EQUAL         &bhm DEL BSPC
