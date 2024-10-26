@@ -163,19 +163,19 @@
 //        |         aA     |         0           |           SPACE              |         SYM         |        aA          |       
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 
-        &kp TAB                                                                                                 &btswitch
+        &mkp LCLK                                                                                                 &btswitch
         &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &mt LA(LEFT) K_BACK                            &tdtoupper
     &kp LC(Q)          &tdclosetab      &kp UP          &tdrefresh        &kp LC(T)      &kp LC(Y)              &none              &kp C_VOL_DN        &kp C_VOL_UP      &tdclosewindow
     &kp LC(A)          &kp LEFT         &kp DOWN        &kp RIGHT         &kp LC(G)      &kp LC(HOME)           &kp LC(END)        &kp AMPS            &kp EQUAL         &bhm DEL BSPC
     &kp ESC            &kp LC(Z)        &kp LC(X)       &kp LC(C)         &kp LC(V)      &none                  &none              &tdgohome           &kp CLCK        &kp ENTER
-                  &msc SCRL_UP     &msc SCRL_DOWN            &mkp LCLK                       &mt LA(LEFT) K_BACK             &kp LMETA
+                  &msc SCRL_UP     &msc SCRL_DOWN            &mkp LCLK                       &mt LA(LEFT) K_BACK             &mkp RCLK
             >;
         };
 
         upper_layer {
 
             bindings = <
-                 &htshiftapp LCLK LG(TAB)                                                                                             &btswitch
+                 &mkp LCLK                                                                                              &btswitch
         &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &mt LA(LEFT) K_BACK                            &to DEFAULT
     &kp Q          &bhm N1 W    &bhm N2 E    &bhm N3 R    &kp T      &kp Y      &kp U       &kp I      &kp O        &kp P
     &kp A          &bhm N4 S    &bhm N5 D    &bhm N6 F    &kp G      &kp H      &kp J       &kp K      &kp L        &kp BSPC
