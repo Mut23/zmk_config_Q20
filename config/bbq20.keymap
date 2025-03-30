@@ -62,7 +62,7 @@
         appswitch: zed_em_appswitch {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kp LMETA>,<&macro_tap &kp TAB>;
+            bindings = <&macro_press &kp LMETA>,<&macro_tap &kp TAB>,<&macro_release &kp LMETA>;
         }; 
   };
 
