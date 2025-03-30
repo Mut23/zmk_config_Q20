@@ -57,6 +57,13 @@
             #binding-cells = <0>;
             bindings = <&macro_tap &bt BT_SEL 1>,<&macro_tap &to DEFAULT>;
         }; 
+
+        //切换app
+        appswitch: zed_em_appswitch {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LMETA>,<&macro_tap &kp TAB>;
+        }; 
   };
 
    //单击PC切换输入法，双击RShift
@@ -177,7 +184,7 @@
     &kp LC(Q)          &tdclosetab      &kp UP          &tdrefresh        &kp LC(T)      &kp LC(Y)              &none              &kp C_VOL_DN        &kp C_VOL_UP      &tdclosewindow
     &kp LC(A)          &kp LEFT         &kp DOWN        &kp RIGHT         &kp LC(G)      &kp LC(HOME)           &kp LC(END)        &kp AMPS            &kp EQUAL         &bhm DEL BSPC
     &kp ESC            &kp LC(Z)        &kp LC(X)       &kp LC(C)         &kp LC(V)      &none                  &none              &tdgohome           &kp CLCK        &kp ENTER
-                  &msc SCRL_UP     &msc SCRL_DOWN            &mkp LCLK                       &mt K_BACK K_BACK             &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS
+                  &msc SCRL_UP     &msc SCRL_DOWN            &mkp LCLK                       &mt K_BACK K_BACK             &appswitch
             >;
         };
 
