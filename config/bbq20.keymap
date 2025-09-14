@@ -65,12 +65,6 @@
             bindings = <&macro_press &kp LGUI>,<&macro_tap &kp ENTER>,<&macro_release &kp LGUI>;
         }; 
 
-        //切换APP
-        tonextapp: zed_em_tonextapp {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>,<&macro_tap &kp TAB>,<&macro_release &kp LALT>;
-        }; 
   };
 
    //单击PC切换输入法，双击RShift
@@ -152,16 +146,6 @@
         };
     };
 
-    behaviors {
-        htshiftapp: hold_tap_shiftapp {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <250>;
-            bindings = <&mkp>, <&kp>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -181,7 +165,7 @@
         &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &mt K_BACK K_BACK                            &to UPPER
     &none              &tdclosetab      &kp UP          &tdrefresh        &none         &none              &none              &kp C_VOL_DN        &kp C_VOL_UP      &tdclosewindow
     &kp LC(A)          &kp LEFT         &kp DOWN        &kp RIGHT         &none         &kp LC(HOME)       &kp LC(END)        &none               &none             &bhm DEL BSPC
-    &tonextapp         &kp LC(Z)        &kp LC(X)       &kp LC(C)         &kp LC(V)     &none              &none              &tdgohome           &kp CLCK          &kp ENTER
+    &kp ESC            &kp LC(Z)        &kp LC(X)       &kp LC(C)         &kp LC(V)     &none              &none              &tdgohome           &kp CLCK          &kp ENTER
                   &msc SCRL_UP     &msc SCRL_DOWN            &mkp LCLK                       &mt K_BACK K_BACK             &mkp RCLK
             >;
         };
