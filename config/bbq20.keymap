@@ -57,6 +57,13 @@
             #binding-cells = <0>;
             bindings = <&macro_tap &bt BT_SEL 1>,<&macro_tap &to DEFAULT>;
         }; 
+
+        //回到桌面
+        todesktop: zed_em_todesktop {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LGUI>,<&macro_tap &kp ENTER>,<&macro_release &kp LGUI>;
+        }; 
   };
 
    //单击PC切换输入法，双击RShift
@@ -94,7 +101,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings =<&kp LG(D)>, <&kp LG(C)>;
+            bindings =<&kp LG(D)>, <&todesktop>;
         };
     };
 
