@@ -174,7 +174,7 @@
         &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &mt K_BACK K_BACK                            &to UPPER
     &none              &tdclosetab      &kp UP          &tdrefresh        &none         &none              &none              &kp C_VOL_DN        &kp C_VOL_UP      &tdclosewindow
     &kp LC(A)          &kp LEFT         &kp DOWN        &kp RIGHT         &none         &kp LC(HOME)       &kp LC(END)        &none               &none             &bhm DEL BSPC
-    &kp ESC            &kp LC(Z)        &kp LC(X)       &kp LC(C)         &kp LC(V)     &none              &none              &tdgohome           &kp CLCK          &kp ENTER
+    &mkp MB3            &kp LC(Z)        &kp LC(X)       &kp LC(C)         &kp LC(V)     &none              &none              &tdgohome           &kp CLCK          &kp ENTER
                   &msc SCRL_UP     &msc SCRL_DOWN            &mkp LCLK                       &mt K_BACK K_BACK             &mkp RCLK
             >;
         };
